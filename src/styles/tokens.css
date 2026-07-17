@@ -13,8 +13,9 @@
   --color-text:           #1C1917;
   --color-text-secondary: #57534E;
   --color-border:         #D6D3D1;
-  --color-accent:         #2563EB;
-  --color-accent-hover:   #1D4ED8;
+  /* Voltage Blue: a bright, neutral electric blue. */
+  --color-accent:         #1D5CFF;
+  --color-accent-hover:   #1548D8;
 
   /* typography */
   --font-display: system-ui, -apple-system, sans-serif;

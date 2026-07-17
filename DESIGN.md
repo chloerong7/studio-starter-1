@@ -9,7 +9,7 @@ design direction, made machine-readable. Be opinionated; vague answers produce g
 
 ## Color direction
 
-(Warm or cool? Quiet or loud? Name a base and an accent if you know them. Update `src/styles/tokens.css` to match.)
+Clean, light neutrals with Voltage Blue: a bright, electrically vivid blue that stays balanced rather than leaning purple or cyan.
 
 ## Typography
 
