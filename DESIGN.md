@@ -9,7 +9,7 @@ design direction, made machine-readable. Be opinionated; vague answers produce g
 
 ## Color direction
 
-Clean, light neutrals with Voltage Blue: a bright, electrically vivid blue that stays balanced rather than leaning purple or cyan.
+Cloud Blue, a very pale but noticeably cool blue, grounds the site; Voltage Blue provides a bright, electrically vivid accent that stays balanced rather than leaning purple or cyan.
 
 ## Typography
 

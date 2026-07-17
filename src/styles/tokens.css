@@ -8,7 +8,8 @@
 */
 :root {
   /* color */
-  --color-bg:             #FFFFFF;
+  /* Cloud Blue: a very pale, neutral blue for the page ground. */
+  --color-bg:             #F2F6FC;
   --color-bg-subtle:      #F5F5F4;
   --color-text:           #1C1917;
   --color-text-secondary: #57534E;
