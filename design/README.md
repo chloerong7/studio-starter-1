@@ -7,10 +7,10 @@ These notes identify transferable qualities, not a chosen visual direction. Chlo
 ## Confirmed direction inputs
 
 - **Visual lane:** Playful tactile collage leads personal areas of the portfolio; cinematic editorial poster qualities shape the presentation of work.
-- **Color strategy:** A primarily neutral, dark site supports multiple colorful accents.
+- **Color strategy:** A primarily neutral, light site uses Desktop Mist and Canvas White with Ink Black, while Hot Pixel Pink and Cursor Blue carry the colorful accents.
 - **Atmosphere:** Experimental and playful without becoming overly energetic.
 - **Interaction:** Interactions should feel intentional and respond to deliberate user input rather than animate constantly or compete for attention.
-- **Section grammar:** Distinct content areas should feel like original art-program windows on a dark creative desktop, with clear active states and restrained overlap rather than copied operating-system chrome.
+- **Section grammar:** Distinct content areas should use single, accurately constructed retro-computer windows on a light desktop: beveled frames, active and inactive title bars, compact controls, inset workspaces, and status strips without doubled backing layers.
 
 ## `emmi-wu-homepage.png`
 
