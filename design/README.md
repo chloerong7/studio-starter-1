@@ -15,6 +15,7 @@ These notes identify transferable qualities, not a chosen visual direction. Chlo
 - **About treatment:** Carry the editable-selection box from `02-direction.png` into the identity/about statement as a focused pink selection state.
 - **Tabs:** Treat the Work Browser tabs as intentional interactive controls, not decorative labels.
 - **Cursor:** Render the retro pointer with a white fill and crisp black pixel outline; keep Cursor Blue available as a broader accent color.
+- **Contact panel:** Use a compact desktop-style list for Email, LinkedIn, and Instagram instead of a generic “Let’s Talk” callout.
 
 ## `emmi-wu-homepage.png`
 
