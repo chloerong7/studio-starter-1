@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import ladyWithFabric from '../assets/projects/traditional/lady-with-fabric-oil.jpg';
+import newYork from '../assets/projects/traditional/new-york-oil.jpeg';
+import gouacheOne from '../assets/projects/traditional/gouache-1.jpg';
+import acrylicOne from '../assets/projects/traditional/acrylic-1.png';
+import acrylicCollage from '../assets/projects/traditional/acrylic-magazine-collage.png';
+import acrylicFabric from '../assets/projects/traditional/acrylic-fabric-magazine.png';
+import gouacheTwo from '../assets/projects/traditional/gouache-2.png';
+import sumiInk from '../assets/projects/traditional/acrylic-and-sumi-ink.png';
+import mixedPainting from '../assets/projects/traditional/mixed-painting.png';
+
+const artworks = [
+  [ladyWithFabric, 'Oil painting of a figure with fabric'], [newYork, 'Oil painting of New York'], [gouacheOne, 'Gouache artwork'], [acrylicOne, 'Acrylic artwork'], [acrylicCollage, 'Acrylic and magazine collage artwork'], [acrylicFabric, 'Acrylic, fabric, and magazine artwork'], [gouacheTwo, 'Gouache artwork'], [sumiInk, 'Acrylic ink and sumi ink artwork'], [mixedPainting, 'Watercolor, gouache, and acrylic artwork'],
+];
+---
+
+<Base title="Traditional Art — Chloe Rong">
+  <h1>Traditional Art</h1>
+  <div class="gallery">{artworks.map(([artwork, alt]) => <img src={artwork.src} alt={alt} loading="lazy" />)}</div>
+</Base>
+
+<style>
+  h1 { font-size: var(--text-2xl); margin: 0 0 var(--space-xl); }
+  .gallery { display: grid; gap: var(--space-lg); }
+  img { width: 100%; height: auto; }
+</style>

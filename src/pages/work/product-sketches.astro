@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import sketchOne from '../../assets/projects/product-sketches/sketch-1.jpeg';
+import sketchTwo from '../../assets/projects/product-sketches/sketch-2.jpeg';
+---
+
+<Base title="Product Sketches — Chloe Rong">
+  <article class="case-study">
+    <h1>Product Sketches</h1>
+    <img src={sketchOne.src} alt="Product sketch collage" loading="eager" />
+    <img src={sketchTwo.src} alt="Product sketch collage detail" loading="lazy" />
+    <a href="/work/poyjector/">Previous: POYjector</a>
+  </article>
+</Base>
+
+<style>
+  .case-study { max-width: 42em; display: grid; gap: var(--space-lg); }
+  h1 { font-size: var(--text-2xl); margin: 0; }
+  img { width: 100%; height: auto; }
+</style>

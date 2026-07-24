@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import conceptOne from '../../assets/projects/concept-art/concept-1.jpg';
+import conceptTwo from '../../assets/projects/concept-art/concept-2.png';
+import conceptThree from '../../assets/projects/concept-art/concept-3.png';
+import conceptFour from '../../assets/projects/concept-art/concept-4.png';
+import conceptFive from '../../assets/projects/concept-art/concept-5.jpeg';
+import conceptSix from '../../assets/projects/concept-art/concept-6.jpeg';
+
+const artworks = [
+  [conceptOne, 'Concept artwork collage'], [conceptTwo, 'Concept artwork'], [conceptThree, 'Seagull character concept artwork'], [conceptFour, 'Bee character concept artwork'], [conceptFive, 'Magical Girl concept artwork'], [conceptSix, 'Concept artwork'],
+];
+---
+
+<Base title="Concept Art — Chloe Rong">
+  <article class="case-study"><h1>Concept Art</h1><div class="gallery">{artworks.map(([artwork, alt]) => <img src={artwork.src} alt={alt} loading="lazy" />)}</div><a href="/work/beexon/">Previous: Beexon</a></article>
+</Base>
+
+<style>
+  .case-study { max-width: 42em; }
+  h1 { font-size: var(--text-2xl); margin: 0 0 var(--space-xl); }
+  .gallery { display: grid; gap: var(--space-lg); margin-bottom: var(--space-lg); }
+  img { width: 100%; height: auto; }
+</style>

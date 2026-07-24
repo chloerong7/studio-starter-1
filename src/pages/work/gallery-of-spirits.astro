@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import cover from '../../assets/projects/gallery-of-spirits/cover.jpg';
+import mapSketch from '../../assets/projects/gallery-of-spirits/map-sketch.jpg';
+import mapDetail from '../../assets/projects/gallery-of-spirits/map-detail.png';
+import map from '../../assets/projects/gallery-of-spirits/map.webp';
+import texturing from '../../assets/projects/gallery-of-spirits/texturing.png';
+---
+
+<Base title="Gallery of Spirits — Chloe Rong">
+  <article class="case-study">
+    <h1>Gallery of Spirits</h1>
+    <p class="summary">Two player museum horror — three week project at CMU NHSGA<br />Producer and Artist</p>
+    <p>Created by Emily Huang, Chloe Rong, Reno Yin, Jasper Cunningham, Freya Zhang, and Lucas Odo Barros</p>
+    <img src={cover.src} alt="Gallery of Spirits game scene" loading="eager" />
+    <h2>Design</h2>
+    <p>Gallery of Spirits is a two person local network game, where one player acts as a benevolent spirit who must guide the other player: the night guard to escape the museum. In order to escape, both players must communicate to complete tasks and avoid the monster.</p>
+    <p>We designed a system of limited communication for the two players: statues that the ghost can point in a certain direction, paintings that display a message, and ghostly walls that block doorways.</p>
+    <p>As the producer I managed project deadlines, ran meetings, designed game systems, and created presentations. As an artist I designed the map and modeled map assets, created particle systems, textured 3D models, and edited the video.</p>
+    <p>I designed and modeled a museum inspired map with tight corridors to enhance the fear of being lost and to add tension when the player was chased. The map was designed to have a circular flow with each room having at least two exits, ensuring the player would never be unfairly trapped.</p>
+    <h2>The Map</h2>
+    <div class="gallery"><img src={mapSketch.src} alt="Gallery of Spirits map sketch" loading="lazy" /><img src={mapDetail.src} alt="Gallery of Spirits map detail" loading="lazy" /><img src={map.src} alt="Gallery of Spirits museum map" loading="lazy" /><img src={texturing.src} alt="Gallery of Spirits texturing work" loading="lazy" /></div>
+    <a href="/work/beexon/">Next: Beexon</a>
+  </article>
+</Base>
+
+<style>
+  .case-study { max-width: 42em; }
+  h1 { font-size: var(--text-2xl); margin: 0 0 var(--space-sm); }
+  h2 { font-size: var(--text-xl); margin: var(--space-xl) 0 var(--space-sm); }
+  p { line-height: var(--leading-loose); }
+  .summary { font-size: var(--text-lg); color: var(--color-text-secondary); }
+  .gallery { display: grid; gap: var(--space-lg); margin: var(--space-lg) 0; }
+  img { width: 100%; height: auto; }
+</style>

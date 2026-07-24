@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import galleryCard from '../assets/projects/gallery-of-spirits/card.png';
+import beexonCard from '../assets/projects/beexon/card.png';
+import conceptCard from '../assets/projects/concept-art/card.png';
+---
+
+<Base title="Games — Chloe Rong">
+  <h1>Games</h1>
+  <div class="project-list">
+    <a href="/work/gallery-of-spirits/" class="project-link"><img src={galleryCard.src} alt="Gallery of Spirits game icon" loading="eager" /><span>Gallery Of Spirits</span></a>
+    <a href="/work/beexon/" class="project-link"><img src={beexonCard.src} alt="Beexon game icon" loading="lazy" /><span>Beexon</span></a>
+    <a href="/work/concept-art/" class="project-link"><img src={conceptCard.src} alt="Concept art seagull character" loading="lazy" /><span>Concept Art</span></a>
+  </div>
+</Base>
+
+<style>
+  h1 { font-size: var(--text-2xl); margin: 0 0 var(--space-xl); }
+  .project-list { display: grid; gap: var(--space-xl); }
+  .project-link { display: grid; gap: var(--space-sm); font-size: var(--text-lg); text-decoration: none; }
+  img { width: 100%; height: auto; }
+</style>

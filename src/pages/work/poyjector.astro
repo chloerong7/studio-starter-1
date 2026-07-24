@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import hero from '../../assets/projects/poyjector/hero.png';
+import process from '../../assets/projects/poyjector/process.jpg';
+---
+
+<Base title="POYjector — Chloe Rong">
+  <article class="case-study">
+    <h1>POYjector</h1>
+    <img src={hero.src} alt="POYjector product concept" loading="eager" />
+    <img src={process.src} alt="POYjector product process detail" loading="lazy" />
+    <a href="/work/product-sketches/">Next: Product Sketches</a>
+  </article>
+</Base>
+
+<style>
+  .case-study { max-width: 42em; display: grid; gap: var(--space-lg); }
+  h1 { font-size: var(--text-2xl); margin: 0; }
+  img { width: 100%; height: auto; }
+</style>

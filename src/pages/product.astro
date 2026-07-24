@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import poyjectorCard from '../assets/projects/poyjector/card.png';
+import sketchesCard from '../assets/projects/product-sketches/card.jpg';
+---
+
+<Base title="Product — Chloe Rong">
+  <h1>Product</h1>
+  <div class="project-list">
+    <a href="/work/poyjector/" class="project-link"><img src={poyjectorCard.src} alt="POYjector product concept" loading="eager" /><span>POYjector</span></a>
+    <a href="/work/product-sketches/" class="project-link"><img src={sketchesCard.src} alt="Product sketches collage" loading="lazy" /><span>Product Sketches</span></a>
+  </div>
+</Base>
+
+<style>
+  h1 { font-size: var(--text-2xl); margin: 0 0 var(--space-xl); }
+  .project-list { display: grid; gap: var(--space-xl); }
+  .project-link { display: grid; gap: var(--space-sm); font-size: var(--text-lg); text-decoration: none; }
+  img { width: 100%; height: auto; }
+</style>

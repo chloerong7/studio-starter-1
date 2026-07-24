@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import artwork1984 from '../assets/projects/sculpture/1984.png';
+import foundation from '../assets/projects/sculpture/foundation.jpg';
+import engorged from '../assets/projects/sculpture/engorged.jpeg';
+import giftCanal from '../assets/projects/sculpture/gift-canal.png';
+import sculptureOne from '../assets/projects/sculpture/sculpture-1.jpg';
+import sculptureTwo from '../assets/projects/sculpture/sculpture-2.jpeg';
+import sculptureThree from '../assets/projects/sculpture/sculpture-3.jpeg';
+import collage from '../assets/projects/sculpture/collage.jpeg';
+---
+
+<Base title="Sculpture — Chloe Rong">
+  <article class="case-study">
+    <h1>Scultpure and Installation</h1>
+    <section><h2>1984</h2><p>Vellum, magnifying glass, lightbox</p><p>Often, books are judged by their covers. This cover shows the entirety of the novel!</p><img src={artwork1984.src} alt="1984 installation with vellum, magnifying glass, and lightbox" loading="lazy" /></section>
+    <section><h2>Foundation</h2><p>chalk, parking lot, iMovie</p><img src={foundation.src} alt="Foundation chalk work in a parking lot" loading="lazy" /></section>
+    <section><h2>Countdown</h2><p>fabric, spray paint, projector, iMovie</p><div class="gallery"><img src={engorged.src} alt="Engorged wire mesh and cotton batting sculpture" loading="lazy" /><img src={giftCanal.src} alt="Gift Canal mixed-media sculpture" loading="lazy" /><img src={sculptureOne.src} alt="Mixed-media sculpture with a faceless doll and plastic babies" loading="lazy" /><img src={sculptureTwo.src} alt="Mixed-media sculpture with a faceless doll and plastic babies" loading="lazy" /><img src={sculptureThree.src} alt="Mixed-media sculpture with a deconstructed bird mannequin head" loading="lazy" /><img src={collage.src} alt="Mixed-media collage sculpture" loading="lazy" /></div></section>
+  </article>
+</Base>
+
+<style>
+  .case-study { max-width: 42em; }
+  h1 { font-size: var(--text-2xl); margin: 0 0 var(--space-xl); }
+  h2 { font-size: var(--text-xl); margin: var(--space-xl) 0 var(--space-sm); }
+  p { line-height: var(--leading-loose); margin: 0 0 var(--space-sm); }
+  img { width: 100%; height: auto; }
+  .gallery { display: grid; gap: var(--space-lg); margin-top: var(--space-lg); }
+</style>

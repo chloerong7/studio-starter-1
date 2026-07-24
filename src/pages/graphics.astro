@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import limelightPoster from '../assets/projects/graphics/limelight-poster.png';
+import showPoster from '../assets/projects/graphics/show-poster.png';
+---
+
+<Base title="Graphic Design — Chloe Rong">
+  <article class="case-study">
+    <h1>Graphic Design</h1>
+    <h2>Show</h2>
+    <p>I designed two show posters for my character’s world, drawing inspiration from the bold design of rave flyers. I utilized textures for a tactile and physical feel to integrate the posters into the world.</p>
+    <div class="gallery">
+      <img src={limelightPoster.src} alt="Limelight poster for Chloe's character world" loading="lazy" />
+      <img src={showPoster.src} alt="Show poster for Chloe's character world" loading="lazy" />
+    </div>
+  </article>
+</Base>
+
+<style>
+  .case-study { max-width: 42em; }
+  h1 { font-size: var(--text-2xl); margin: 0 0 var(--space-xl); }
+  h2 { font-size: var(--text-xl); margin: 0 0 var(--space-sm); }
+  p { line-height: var(--leading-loose); margin: 0 0 var(--space-xl); }
+  .gallery { display: grid; gap: var(--space-lg); }
+  img { width: 100%; height: auto; }
+</style>

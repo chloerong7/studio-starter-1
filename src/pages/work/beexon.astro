@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+import character from '../../assets/projects/beexon/character.png';
+import modeling from '../../assets/projects/beexon/modeling.jpg';
+import animationOne from '../../assets/projects/beexon/animation-1.gif';
+import animationTwo from '../../assets/projects/beexon/animation-2.gif';
+import birdBee from '../../assets/projects/beexon/bird-bee.gif';
+import uiOne from '../../assets/projects/beexon/ui-1.png';
+import uiTwo from '../../assets/projects/beexon/ui-2.png';
+import uiThree from '../../assets/projects/beexon/ui-3.jpeg';
+---
+
+<Base title="Beexon — Chloe Rong">
+  <article class="case-study">
+    <h1>Beexon</h1>
+    <p class="summary">Bee themed remake of the classic arcade game Zaxxon — one week project at CMU NHSGA</p>
+    <h2>Team</h2>
+    <p>Chloe - Artist and Producer</p><p>Britney - Artist</p><p>Pranav - Programmer</p><p>Freya - Programmer</p><p>James - Programmer</p><p>William - Sound</p>
+    <div class="gallery"><img src={character.src} alt="Beexon bee character" loading="eager" /><img src={modeling.src} alt="Beexon bee character model" loading="lazy" /></div>
+    <h2>Animations</h2>
+    <div class="gallery"><img src={animationOne.src} alt="Beexon screen-recorded animation" loading="lazy" /><img src={animationTwo.src} alt="Beexon screen-recorded animation detail" loading="lazy" /><img src={birdBee.src} alt="Bird and bee animation for Beexon" loading="lazy" /></div>
+    <h2>UI Design</h2>
+    <p>The UI was designed to mirror the UI of the original Zaxxon game, with a bee themed twist! I created a custom font, fuel bar, and UI Icons, as well as a cloud transition for the stage reset.</p>
+    <h2>Art Assets</h2>
+    <div class="gallery"><img src={uiOne.src} alt="Beexon interface art asset" loading="lazy" /><img src={uiTwo.src} alt="Beexon interface art asset" loading="lazy" /><img src={uiThree.src} alt="Beexon interface art asset" loading="lazy" /></div>
+    <p><a href="/work/gallery-of-spirits/">Previous: Gallery of Spirits</a><br /><a href="/work/concept-art/">Next: Concept Art</a></p>
+  </article>
+</Base>
+
+<style>
+  .case-study { max-width: 42em; }
+  h1 { font-size: var(--text-2xl); margin: 0 0 var(--space-sm); }
+  h2 { font-size: var(--text-xl); margin: var(--space-xl) 0 var(--space-sm); }
+  p { line-height: var(--leading-loose); margin: 0 0 var(--space-xs); }
+  .summary { font-size: var(--text-lg); color: var(--color-text-secondary); margin-bottom: var(--space-xl); }
+  .gallery { display: grid; gap: var(--space-lg); margin: var(--space-lg) 0; }
+  img { width: 100%; height: auto; }
+</style>
