@@ -7,6 +7,16 @@
   See /showcase to watch your system take shape.
 */
 :root {
+  /* approved homepage calibration palette */
+  --color-desktop:        #25272C;
+  --color-ink:            #15171B;
+  --color-canvas:         #F4F3EE;
+  --color-pink:           #FF2D9A;
+  --color-blue:           #4385FF;
+  --color-chrome-light:   color-mix(in srgb, var(--color-canvas) 84%, var(--color-ink));
+  --color-chrome-shadow:  color-mix(in srgb, var(--color-canvas) 52%, var(--color-ink));
+  --color-desktop-shadow: color-mix(in srgb, var(--color-desktop) 72%, var(--color-ink));
+
   /* color */
   /* Cloud Blue: a very pale, neutral blue for the page ground. */
   --color-bg:             #F2F6FC;
@@ -21,17 +31,24 @@
   /* typography */
   --font-display: system-ui, -apple-system, sans-serif;
   --font-body:    system-ui, -apple-system, sans-serif;
+  --font-hero-display: "Hanken Grotesk", system-ui, sans-serif;
+  --font-interface: "Recursive", ui-monospace, monospace;
 
+  --text-2xs:  0.75rem;
   --text-sm:   0.875rem;
   --text-base: 1rem;
   --text-lg:   1.25rem;
   --text-xl:   1.5rem;
   --text-2xl:  2rem;
   --text-3xl:  2.75rem;
+  --text-hero: clamp(3rem, 5vw, 4.5rem);
+  --text-project: clamp(2.25rem, 5vw, 4.75rem);
 
+  --leading-flat:   0.92;
   --leading-tight:  1.2;
   --leading-normal: 1.5;
   --leading-loose:  1.75;
+  --tracking-display: -0.03em;
 
   /* spacing */
   --space-2xs: 4px;
@@ -41,11 +58,27 @@
   --space-lg:  24px;
   --space-xl:  48px;
   --space-2xl: 96px;
+  --space-3xl: 128px;
 
   /* radius */
+  --radius-none: 0;
   --radius-sm: 4px;
   --radius-md: 8px;
 
   /* layout */
   --max-width-page: 1100px;
+  --max-width-hero: 1440px;
+  --size-titlebar: 32px;
+  --size-window-control: 22px;
+  --size-selection-handle: 8px;
+  --size-cursor: 40px;
+  --size-button-min: 176px;
+  --stroke-cursor: 2px;
+  --shadow-window: 12px 14px 28px var(--color-desktop-shadow);
+  --shadow-bevel: inset 1px 1px 0 var(--color-canvas), inset -1px -1px 0 var(--color-ink);
+
+  /* motion */
+  --motion-duration-image: 300ms;
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-scale-image: 1.015;
 }

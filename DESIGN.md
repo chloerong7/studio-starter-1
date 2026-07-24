@@ -1,28 +1,33 @@
 # DESIGN.md — how this site should look and feel
 
-Fill this in during Week 2. The AI reads this file before design work — it is your
-design direction, made machine-readable. Be opinionated; vague answers produce generic design.
+## Mood and references
 
-## Mood & references
-
-(Three adjectives, plus two or three sites or artists whose feeling you want — not to copy, but as a register.)
+Experimental, playful, and intentional. Personal areas can borrow the tactile looseness of a collage; work presentation should feel more cinematic and editorial, while the interface grammar comes from accurate retro art-program windows.
 
 ## Color direction
 
-Cloud Blue, a very pale but noticeably cool blue, grounds the site; Voltage Blue provides a bright, electrically vivid accent that stays balanced rather than leaning purple or cyan.
+The locked palette is Graphite Desktop (`--color-desktop`) around Canvas White (`--color-canvas`) windows with Ink Black (`--color-ink`) content. Hot Pixel Pink (`--color-pink`) marks selections and actions; Cursor Blue (`--color-blue`) is a secondary active-state accent.
 
 ## Typography
 
-(One display feeling + one body feeling. Serif, sans, mono? Update the font tokens when you choose.)
+Hanken Grotesk is the expressive display face for identity statements, project titles, and major headings. Recursive Mono is the interface voice for title bars, navigation, metadata, supporting copy, tabs, and controls.
 
-## Spacing & layout feel
+## Spacing and layout feel
 
-(Dense and editorial, or airy and slow? Big images or text-led?)
+Use an asymmetric Window Cascade: distinct single-layer windows, controlled overlap, decisive changes in scale, and enough dark desktop around them to keep the composition calm. On narrow screens, preserve reading order and hierarchy instead of reproducing desktop coordinates.
+
+## Interface details
+
+Frames use beveled edges, compact title bars, inset workspaces, restrained status strips, and square controls. The signature identity moment is a Hot Pixel Pink selection box around “interaction,”; the cursor is Canvas White with an Ink Black pixel outline.
 
 ## Motion personality
 
-(Calm, springy, instant, deliberate? Week 3 will use this.)
+Interactions happen only after deliberate input. Use fast, direct feedback for hover, focus, press, selection, and tab changes; avoid ambient movement or simultaneous decorative animation.
+
+## Accessibility
+
+Maintain WCAG AA contrast, semantic structure, keyboard access, visible Cursor Blue focus treatment, reduced-motion support, descriptive alt text, and a logical mobile reading order.
 
 ## What to avoid
 
-(The looks you do NOT want — this is the most useful section for steering the AI away from generic output.)
+Do not add doubled window backing layers, glossy glass effects, generic rounded cards, invented operating-system behavior, fake links, or decorative chrome that competes with project content. Generated mock imagery is reference only; production pages use Chloe’s original assets.

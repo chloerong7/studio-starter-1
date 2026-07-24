@@ -1,29 +1,486 @@
 ---
 import Base from '../layouts/Base.astro';
+import poyjectorHero from '../assets/projects/poyjector/hero.png';
+
+/*
+  THESIS: Chloe’s homepage opens as an authored desktop, not a standard portfolio hero.
+  OWN-WORLD: Graphite desktop, Canvas White windows, Ink Black structure, Hot Pixel Pink
+  selection states, Cursor Blue focus, Hanken Grotesk display, and Recursive interface type.
+  STORY: Meet a people-centered product designer, see Poyjector as proof, then choose work
+  or contact.
+  FIRST VIEWPORT: Identity leads upper left, Poyjector holds the right, and contact sits
+  beneath the identity window; the Work Browser remains outside this calibration.
+  FORM: Window Cascade, the approved first direction, staged as a responsive single-layer
+  retro program workspace.
+*/
 ---
 
-<Base>
-  <section class="hero">
-    <h1>Chloe Rong</h1>
-    <p class="hero-line">One sentence about who you are and what you make. Replace me in Week 1.</p>
-    <a href="/work/">See my work</a>
+<Base
+  title="Chloe Rong — Product Designer"
+  description="Chloe Rong is a product designer focused on people, interaction, and impact."
+  bodyClass="calibration-home"
+  showFooter={false}
+  contactHref="#contact-window"
+>
+  <section class="hero-calibration" aria-labelledby="hero-title">
+    <div class="hero-desktop">
+      <article class="hero-window hero-window--identity">
+        <header class="window-bar window-bar--active">
+          <span class="window-app-mark" aria-hidden="true"></span>
+          <span class="window-title">Identity</span>
+          <span class="window-controls" aria-hidden="true">
+            <span>–</span>
+            <span>□</span>
+            <span>×</span>
+          </span>
+        </header>
+
+        <div class="identity-content">
+          <p class="identity-role">Product designer</p>
+          <h1 id="hero-title">
+            Designing for people,
+            <span class="identity-selection">
+              interaction,
+              <span class="selection-handle selection-handle--top-left" aria-hidden="true"></span>
+              <span class="selection-handle selection-handle--top-right" aria-hidden="true"></span>
+              <span class="selection-handle selection-handle--bottom-left" aria-hidden="true"></span>
+              <span class="selection-handle selection-handle--bottom-right" aria-hidden="true"></span>
+            </span>
+            and impact.
+          </h1>
+          <p class="identity-note">Inspired by the internet, printed media, movies, and games.</p>
+
+          <div class="identity-actions">
+            <a class="retro-button retro-button--primary" href="/work/">View work</a>
+            <a class="retro-button" href="#contact-window">Contact Chloe</a>
+            <svg class="cursor-icon" viewBox="0 0 34 44" aria-hidden="true">
+              <path d="M2 2v31l8-8 6 15 7-3-6-14h13L2 2Z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="window-status" aria-hidden="true"></div>
+      </article>
+
+      <article class="hero-window hero-window--featured">
+        <header class="window-bar">
+          <span class="window-app-mark" aria-hidden="true"></span>
+          <span class="window-title">Featured_work</span>
+          <span class="window-controls" aria-hidden="true">
+            <span>–</span>
+            <span>□</span>
+            <span>×</span>
+          </span>
+        </header>
+
+        <div class="featured-heading">
+          <p class="featured-label">Featured project</p>
+          <h2><a href="/work/poyjector/">POYjector</a></h2>
+          <p class="featured-meta">Context / Process / Outcomes</p>
+        </div>
+
+        <a class="featured-media" href="/work/poyjector/" aria-label="View the POYjector case study">
+          <img
+            src={poyjectorHero.src}
+            width={poyjectorHero.width}
+            height={poyjectorHero.height}
+            alt="POYjector sketches showing an interactive classroom projector, transforming mascots, and a student storyboard"
+            loading="eager"
+          />
+        </a>
+
+        <div class="window-status" aria-hidden="true"></div>
+      </article>
+
+      <aside id="contact-window" class="hero-window hero-window--contact" aria-labelledby="contact-title">
+        <header class="window-bar">
+          <span class="window-app-mark" aria-hidden="true"></span>
+          <h2 id="contact-title" class="window-title">Contact</h2>
+          <span class="window-controls" aria-hidden="true">
+            <span>–</span>
+            <span>□</span>
+            <span>×</span>
+          </span>
+        </header>
+
+        <ul class="contact-list" aria-label="Contact channels awaiting final links">
+          <li><span>Email</span><span class="contact-marker" aria-hidden="true"></span></li>
+          <li><span>LinkedIn</span><span class="contact-marker" aria-hidden="true"></span></li>
+          <li><span>Instagram</span><span class="contact-marker" aria-hidden="true"></span></li>
+        </ul>
+        <p class="contact-status">Links pending</p>
+      </aside>
+    </div>
   </section>
 </Base>
 
 <style>
-  .hero {
-    padding: var(--space-2xl) 0;
+  .hero-calibration {
+    min-height: 100svh;
+    padding: var(--space-lg) var(--space-md) var(--space-xl);
+    background: var(--color-desktop);
   }
 
-  .hero h1 {
-    font-size: var(--text-3xl);
+  .hero-desktop {
+    display: grid;
+    gap: var(--space-lg);
+    width: 100%;
+    max-width: var(--max-width-hero);
+    margin: 0 auto;
+  }
+
+  .hero-window {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    color: var(--color-ink);
+    background: var(--color-canvas);
+    border: 1px solid var(--color-ink);
+    border-radius: var(--radius-none);
+    box-shadow: var(--shadow-window), var(--shadow-bevel);
+  }
+
+  .window-bar {
+    display: flex;
+    align-items: center;
+    min-height: var(--size-titlebar);
+    padding: var(--space-2xs);
+    gap: var(--space-xs);
+    font-family: var(--font-interface);
+    font-size: var(--text-sm);
+    font-variation-settings: "MONO" 1;
+    text-transform: uppercase;
+    background: var(--color-chrome-light);
+    border-bottom: 1px solid var(--color-ink);
+    box-shadow: var(--shadow-bevel);
+  }
+
+  .window-bar--active {
+    color: var(--color-ink);
+    background: var(--color-blue);
+  }
+
+  .window-app-mark {
+    width: var(--space-md);
+    height: var(--space-md);
+    flex: 0 0 auto;
+    background: var(--color-pink);
+    border: 1px solid currentColor;
+    box-shadow: var(--shadow-bevel);
+  }
+
+  .window-title {
+    margin: 0;
+    font: inherit;
+  }
+
+  .window-controls {
+    display: flex;
+    gap: var(--space-2xs);
+    margin-left: auto;
+  }
+
+  .window-controls span {
+    display: grid;
+    width: var(--size-window-control);
+    height: var(--size-window-control);
+    place-items: center;
+    color: currentColor;
+    opacity: 0.56;
+    line-height: var(--leading-flat);
+  }
+
+  .window-controls span:last-child {
+    opacity: 0.72;
+  }
+
+  .identity-content {
+    padding: var(--space-lg);
+  }
+
+  .identity-role,
+  .featured-label {
+    width: fit-content;
     margin: 0 0 var(--space-md);
+    padding-bottom: var(--space-2xs);
+    font-family: var(--font-interface);
+    font-size: var(--text-sm);
+    font-variation-settings: "MONO" 1;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-pink);
   }
 
-  .hero-line {
-    font-size: var(--text-lg);
+  .identity-content h1 {
+    max-width: 100%;
+    margin: 0;
+    font-family: var(--font-hero-display);
+    font-size: var(--text-hero);
+    font-weight: 600;
+    line-height: var(--leading-flat);
+    letter-spacing: var(--tracking-display);
+  }
+
+  .identity-selection {
+    position: relative;
+    display: inline-block;
+    border: 1px dashed var(--color-pink);
+  }
+
+  .selection-handle {
+    position: absolute;
+    width: var(--size-selection-handle);
+    height: var(--size-selection-handle);
+    background: var(--color-pink);
+  }
+
+  .selection-handle--top-left {
+    top: calc(var(--size-selection-handle) / -2);
+    left: calc(var(--size-selection-handle) / -2);
+  }
+
+  .selection-handle--top-right {
+    top: calc(var(--size-selection-handle) / -2);
+    right: calc(var(--size-selection-handle) / -2);
+  }
+
+  .selection-handle--bottom-left {
+    bottom: calc(var(--size-selection-handle) / -2);
+    left: calc(var(--size-selection-handle) / -2);
+  }
+
+  .selection-handle--bottom-right {
+    right: calc(var(--size-selection-handle) / -2);
+    bottom: calc(var(--size-selection-handle) / -2);
+  }
+
+  .identity-note {
+    max-width: 38ch;
+    margin: var(--space-lg) 0 0;
+    font-family: var(--font-interface);
+    font-size: var(--text-base);
+    font-variation-settings: "MONO" 1;
+    line-height: var(--leading-tight);
+  }
+
+  .identity-actions {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+  }
+
+  .retro-button {
+    min-width: var(--size-button-min);
+    padding: var(--space-sm) var(--space-lg);
+    color: var(--color-ink);
+    font-family: var(--font-interface);
+    font-size: var(--text-sm);
+    font-variation-settings: "MONO" 1;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: var(--color-canvas);
+    border: 1px solid var(--color-ink);
+    box-shadow: var(--shadow-bevel);
+  }
+
+  .retro-button--primary {
+    background: var(--color-pink);
+  }
+
+  .retro-button:hover,
+  .retro-button:focus-visible {
+    color: var(--color-ink);
+    background: var(--color-blue);
+    text-decoration: underline;
+    text-decoration-color: var(--color-ink);
+  }
+
+  .retro-button:focus-visible,
+  .featured-heading a:focus-visible,
+  .featured-media:focus-visible {
+    outline: var(--space-2xs) solid var(--color-blue);
+    outline-offset: var(--space-2xs);
+  }
+
+  .retro-button:active {
+    transform: translate(1px, 1px);
+  }
+
+  .cursor-icon {
+    position: absolute;
+    bottom: calc(var(--space-lg) * -1);
+    left: calc(var(--space-xl) * 3);
+    z-index: 2;
+    width: var(--size-cursor);
+    height: auto;
+    pointer-events: none;
+    fill: var(--color-canvas);
+    stroke: var(--color-ink);
+    stroke-width: var(--stroke-cursor);
+    stroke-linejoin: miter;
+  }
+
+  .window-status {
+    height: var(--space-md);
+    background: var(--color-chrome-light);
+    border-top: 1px solid var(--color-ink);
+    box-shadow: var(--shadow-bevel);
+  }
+
+  .featured-heading {
+    padding: var(--space-lg) var(--space-lg) var(--space-md);
+  }
+
+  .featured-label {
+    margin-bottom: var(--space-xs);
+  }
+
+  .featured-heading h2 {
+    margin: 0;
+    font-family: var(--font-hero-display);
+    font-size: var(--text-project);
+    font-weight: 500;
+    letter-spacing: var(--tracking-display);
+    line-height: var(--leading-flat);
+    text-transform: uppercase;
+  }
+
+  .featured-heading h2 a {
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .featured-heading h2 a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-pink);
+  }
+
+  .featured-meta {
+    margin: var(--space-xs) 0 0;
+    font-family: var(--font-interface);
+    font-size: var(--text-sm);
+    font-variation-settings: "MONO" 1;
+  }
+
+  .featured-media {
+    display: block;
+    overflow: hidden;
+    margin: 0 var(--space-lg) var(--space-lg);
+    color: var(--color-ink);
+    border: 1px solid var(--color-ink);
+  }
+
+  .featured-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform var(--motion-duration-image) var(--motion-ease-out);
+  }
+
+  .featured-media:hover img,
+  .featured-media:focus-visible img {
+    transform: scale(var(--motion-scale-image));
+  }
+
+  .contact-list {
+    display: grid;
+    gap: var(--space-xs);
+    margin: 0;
+    padding: var(--space-md);
+    list-style: none;
+  }
+
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--size-titlebar);
+    padding: var(--space-xs) var(--space-sm);
+    font-family: var(--font-interface);
+    font-size: var(--text-sm);
+    font-variation-settings: "MONO" 1;
+    text-transform: uppercase;
+    border: 1px solid var(--color-ink);
+    box-shadow: var(--shadow-bevel);
+  }
+
+  .contact-marker {
+    width: var(--space-xs);
+    height: var(--space-xs);
+    background: var(--color-pink);
+  }
+
+  .contact-status {
+    margin: 0;
+    padding: 0 var(--space-md) var(--space-md);
     color: var(--color-text-secondary);
-    max-width: 36em;
-    margin: 0 0 var(--space-lg);
+    font-family: var(--font-interface);
+    font-size: var(--text-2xs);
+    font-variation-settings: "MONO" 1;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 48rem) {
+    .hero-calibration {
+      padding: var(--space-xl) var(--space-lg) var(--space-2xl);
+    }
+
+    .hero-desktop {
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      align-items: start;
+    }
+
+    .hero-window--identity {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .hero-window--featured {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      margin-top: var(--space-xl);
+    }
+
+    .hero-window--contact {
+      grid-column: 1;
+      grid-row: 2;
+      width: 68%;
+      margin-top: calc(var(--space-xl) * -1);
+      margin-right: var(--space-lg);
+      justify-self: end;
+    }
+  }
+
+  @media (min-width: 72rem) {
+    .hero-calibration {
+      padding-top: var(--space-xl);
+    }
+
+    .hero-desktop {
+      grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+      gap: var(--space-lg);
+    }
+
+    .identity-content {
+      padding: var(--space-lg) var(--space-lg) var(--space-xl);
+    }
+
+    .hero-window--featured {
+      margin-top: var(--space-2xl);
+    }
+
+    .hero-window--contact {
+      width: 52%;
+      margin-top: calc(var(--space-2xl) * -1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .featured-media img {
+      transition: none;
+    }
   }
 </style>
