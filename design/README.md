@@ -4,6 +4,13 @@ Use `design/inspiration/` for private visual references. Keep palettes and gener
 
 These notes identify transferable qualities, not a chosen visual direction. Chloe must confirm the interpretation before any design work begins.
 
+## Confirmed direction inputs
+
+- **Visual lane:** Playful tactile collage leads personal areas of the portfolio; cinematic editorial poster qualities shape the presentation of work.
+- **Color strategy:** A primarily neutral, dark site supports multiple colorful accents.
+- **Atmosphere:** Experimental and playful without becoming overly energetic.
+- **Interaction:** Interactions should feel intentional and respond to deliberate user input rather than animate constantly or compete for attention.
+
 ## `emmi-wu-homepage.png`
 
 - **Source URL:** https://emmiwu.com/
@@ -28,7 +35,7 @@ These notes identify transferable qualities, not a chosen visual direction. Chlo
 
 ## `visual-amnesia-poster.png`
 
-- **Source URL:** Missing — Chloe, please provide the original page URL.
+- **Source:** Variant.com; no specific source-page URL is available.
 - **Composition:** Oversized type, an asymmetrical title block, and one dominant horizontal artwork create a poster-like reading sequence.
 - **Typography:** A neutral grotesk shifts dramatically in scale while retaining a stripped-back typographic voice.
 - **Color temperature:** Black, white, and cool gray produce a stark, gallery-like monochrome field.
