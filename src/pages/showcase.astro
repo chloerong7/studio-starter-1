@@ -2,320 +2,352 @@
 import Base from '../layouts/Base.astro';
 
 const colors = [
-  ['--color-desktop', 'Graphite Desktop', 'homepage desktop'],
-  ['--color-ink', 'Ink Black', 'window text and structure'],
-  ['--color-canvas', 'Canvas White', 'window surfaces'],
-  ['--color-pink', 'Hot Pixel Pink', 'selections and actions'],
-  ['--color-blue', 'Cursor Blue', 'focus and active states'],
-  ['--color-bg', 'Background', 'page background'],
-  ['--color-bg-subtle', 'Background subtle', 'cards, panels'],
-  ['--color-text', 'Text', 'headings, body'],
-  ['--color-text-secondary', 'Text secondary', 'supporting copy'],
-  ['--color-border', 'Border', 'dividers, outlines'],
-  ['--color-accent', 'Accent', 'links, highlights'],
-  ['--color-accent-hover', 'Accent hover', 'hover states'],
+  ['ds-swatch--bg', '--color-bg', 'Browser White', 'page canvas'],
+  ['ds-swatch--bg-subtle', '--color-bg-subtle', 'Subtle Ground', 'quiet showcase and utility surfaces'],
+  ['ds-swatch--text', '--color-text', 'Text', 'default copy'],
+  ['ds-swatch--text-secondary', '--color-text-secondary', 'Muted Text', 'supporting copy'],
+  ['ds-swatch--border', '--color-border', 'Hairline', 'dividers and quiet structure'],
+  ['ds-swatch--accent', '--color-accent', 'Screen Blue', 'global links and focus'],
+  ['ds-swatch--accent-hover', '--color-accent-hover', 'Screen Blue Hover', 'darker interactive state'],
+  ['ds-swatch--paper', '--color-paper', 'Paper', 'white project slips'],
+  ['ds-swatch--ink', '--color-ink', 'Soft Carbon', 'paper text and high-contrast focus'],
+  ['ds-swatch--pink', '--color-pink', 'Lottery Pink', 'identity and lead notes'],
+  ['ds-swatch--blue', '--color-blue', 'Screen Blue', 'ASCII marks and focus'],
+  ['ds-swatch--cyan', '--color-cyan', 'Portal Cyan', 'games and media papers'],
+  ['ds-swatch--lime', '--color-lime', 'Prize Lime', 'product papers and highlights'],
+  ['ds-swatch--powder', '--color-powder', 'Powder Blue', 'art and personal notes'],
+  ['ds-swatch--tape', '--color-tape', 'Warm Tape', 'translucent joins'],
+  ['ds-swatch--shadow', '--color-paper-shadow', 'Paper Shadow', 'layered paper depth'],
+  ['ds-swatch--focus', '--color-focus', 'Global Focus', 'default focus ring'],
 ];
 
-const sizes = [
-  '--text-2xs',
-  '--text-sm',
-  '--text-base',
-  '--text-lg',
-  '--text-xl',
-  '--text-2xl',
-  '--text-3xl',
-  '--text-project',
-  '--text-hero',
+const colorAliases = [
+  ['--color-desktop', '--color-bg'],
+  ['--color-canvas', '--color-paper'],
+  ['--color-chrome-light', '--color-bg-subtle'],
+  ['--color-chrome-shadow', '--color-border'],
+  ['--color-desktop-shadow', '--color-paper-shadow'],
 ];
 
-const spaces = ['--space-2xs', '--space-xs', '--space-sm', '--space-md', '--space-lg', '--space-xl', '--space-2xl'];
+const typeSizes = [
+  ['ds-type--2xs', '--text-2xs'], ['ds-type--sm', '--text-sm'], ['ds-type--base', '--text-base'],
+  ['ds-type--lg', '--text-lg'], ['ds-type--xl', '--text-xl'], ['ds-type--2xl', '--text-2xl'],
+  ['ds-type--3xl', '--text-3xl'], ['ds-type--identity', '--text-identity'], ['ds-type--section', '--text-section'],
+  ['ds-type--hero', '--text-hero'], ['ds-type--project', '--text-project'],
+];
+
+const spacing = [
+  ['ds-space--2xs', '--space-2xs'], ['ds-space--xs', '--space-xs'], ['ds-space--sm', '--space-sm'],
+  ['ds-space--md', '--space-md'], ['ds-space--lg', '--space-lg'], ['ds-space--xl', '--space-xl'],
+  ['ds-space--2xl', '--space-2xl'], ['ds-space--3xl', '--space-3xl'], ['ds-space--section', '--space-section'],
+];
 
 const radii = [
-  ['--radius-sm', 'buttons, inputs, tags'],
-  ['--radius-md', 'cards, containers'],
+  ['ds-radius--none', '--radius-none', 'calibrated collage papers'],
+  ['ds-radius--sm', '--radius-sm', 'small utilities'],
+  ['ds-radius--md', '--radius-md', 'medium utilities'],
+];
+
+const widths = [
+  ['ds-width--page', '--max-width-page'], ['ds-width--reading', '--max-width-reading'],
+  ['ds-width--hero', '--max-width-hero'], ['ds-width--identity', '--max-width-identity'],
+  ['ds-width--note', '--max-width-note'], ['ds-width--about', '--max-width-about'],
+  ['ds-width--footer', '--max-width-footer'],
+];
+
+const compatibilitySizes = [
+  '--size-titlebar', '--size-window-control', '--size-selection-handle', '--size-cursor',
+  '--size-button-min', '--stroke-cursor',
 ];
 
 const navSections = [
-  ['Foundations', [['#color', 'Color'], ['#typography', 'Typography'], ['#spacing', 'Spacing']]],
-  ['Attributes', [['#radius', 'Radius']]],
-  ['Components', [['#component-nav', 'Nav Link'], ['#component-list', 'List Row']]],
+  ['Foundations', [['#colors', 'Colors'], ['#typography', 'Typography'], ['#spacing', 'Spacing'], ['#layout', 'Layout'], ['#depth', 'Depth'], ['#motion', 'Motion']]],
+  ['Components', [['#navigation', 'Navigation'], ['#identity-paper', 'Identity Paper'], ['#work-paper', 'Work Paper'], ['#project-slip', 'Project Slip'], ['#work-index', 'Work Index'], ['#media-frame', 'Media Frame'], ['#project-note', 'Project Note'], ['#footer-note', 'Footer Note']]],
 ];
 ---
 
-<Base title="Design System — Showcase">
+<Base title="Design System — Chloe Rong" showFooter={false}>
   <div class="ds-layout">
     <nav class="ds-nav" aria-label="Design system contents">
       {navSections.map(([group, links]) => (
-        <div>
+        <div class="ds-nav-group">
           <p class="ds-nav-label">{group}</p>
           <ul>
-            {links.map(([href, label]) => (
-              <li><a href={href}>{label}</a></li>
-            ))}
+            {links.map(([href, label]) => <li><a href={href}>{label}</a></li>)}
           </ul>
         </div>
       ))}
     </nav>
 
-    <article>
-      <header>
-        <h1>Your Design System</h1>
-        <p class="ds-intro">
-          This page reads directly from <code>src/styles/tokens.css</code>. Change a token,
-          refresh, and your whole system updates at once. When you build a new reusable
-          component, add a demo of it to the Components section here — that's a house rule.
-        </p>
+    <article class="ds-content">
+      <header class="ds-header">
+        <p class="ds-kicker">Calibrated homepage system</p>
+        <h1>The Interactive Digital Sketchbook</h1>
+        <p>This page renders the live values from <code>tokens.css</code> and the recurring components documented in <code>DESIGN.md</code>.</p>
       </header>
 
-      <section id="color">
-        <h2>Color</h2>
-        <table class="ds-table">
-          <thead>
-            <tr><th></th><th>Token</th><th>Role</th><th>Used for</th></tr>
-          </thead>
-          <tbody>
-            {colors.map(([token, role, use]) => (
-              <tr>
-                <td><span class="ds-chip" style={`background: var(${token})`}></span></td>
-                <td><code>{token}</code></td>
-                <td>{role}</td>
-                <td class="ds-use">{use}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <section id="colors" class="ds-section">
+        <h2>Colors</h2>
+        <div class="ds-color-grid">
+          {colors.map(([className, token, role, use]) => (
+            <article class="ds-color-card">
+              <span class={`ds-swatch ${className}`} aria-hidden="true"></span>
+              <code>{token}</code>
+              <strong>{role}</strong>
+              <p>{use}</p>
+            </article>
+          ))}
+        </div>
+        <details class="ds-details">
+          <summary>Compatibility aliases</summary>
+          <p>Retained for pages that have not been recalibrated; these do not define the current collage direction.</p>
+          <dl class="ds-token-list">
+            {colorAliases.map(([alias, target]) => <div><dt><code>{alias}</code></dt><dd><code>{target}</code></dd></div>)}
+          </dl>
+        </details>
       </section>
 
-      <section id="typography">
+      <section id="typography" class="ds-section">
         <h2>Typography</h2>
-        <p class="ds-note">Display font for impression, body font for information. Both set in <code>tokens.css</code>.</p>
+        <div class="ds-font-pair">
+          <article class="ds-font-card ds-font-card--display"><code>--font-display</code><p>Gabarito makes the statement.</p></article>
+          <article class="ds-font-card ds-font-card--body"><code>--font-body</code><p>Courier Prime explains, labels, and guides.</p></article>
+        </div>
+        <p class="ds-note">Aliases <code>--font-hero-display</code> and <code>--font-interface</code> resolve to the two live families above.</p>
         <div class="ds-type-scale">
-          {sizes.map((token) => (
-            <div class="ds-type-row">
-              <code>{token}</code>
-              <p class="ds-type-sample" style={`font-size: var(${token})`}>The quick brown fox</p>
-            </div>
+          {typeSizes.map(([className, token]) => (
+            <div class="ds-type-row"><code>{token}</code><p class={`ds-type-sample ${className}`}>Chloe Rong</p></div>
           ))}
+        </div>
+        <div class="ds-leading-grid">
+          <article><code>--leading-flat</code><p class="ds-leading--flat">Flat display lines sit close enough to behave as one graphic object.</p></article>
+          <article><code>--leading-tight</code><p class="ds-leading--tight">Tight headings and compact notes remain readable.</p></article>
+          <article><code>--leading-normal</code><p class="ds-leading--normal">Normal body rhythm supports project descriptions and longer writing.</p></article>
+          <article><code>--leading-loose</code><p class="ds-leading--loose">Loose rhythm remains available to imported legacy pages.</p></article>
+          <article><code>--tracking-display</code><p class="ds-tracking--display">DISPLAY TRACKING</p></article>
         </div>
       </section>
 
-      <section id="spacing">
-        <h2>Spacing</h2>
+      <section id="spacing" class="ds-section">
+        <h2>Spacing and Radius</h2>
         <div class="ds-space-scale">
-          {spaces.map((token) => (
-            <div class="ds-space-row">
-              <code>{token}</code>
-              <div class="ds-space-bar" style={`width: var(${token})`}></div>
-            </div>
-          ))}
+          {spacing.map(([className, token]) => <div class="ds-space-row"><code>{token}</code><span class={`ds-space-bar ${className}`}></span></div>)}
         </div>
-      </section>
-
-      <section id="radius">
-        <h2>Radius</h2>
         <div class="ds-radius-grid">
-          {radii.map(([token, use]) => (
-            <figure class="ds-radius-card">
-              <div class="ds-radius-demo" style={`border-radius: var(${token})`}></div>
-              <figcaption>
-                <code>{token}</code>
-                <span class="ds-use">{use}</span>
-              </figcaption>
-            </figure>
+          {radii.map(([className, token, use]) => (
+            <figure class="ds-radius-card"><span class={`ds-radius-demo ${className}`}></span><figcaption><code>{token}</code><small>{use}</small></figcaption></figure>
           ))}
         </div>
       </section>
 
-      <section id="component-nav">
-        <h2>Nav Link</h2>
-        <div class="ds-demo">
-          <a href="#component-nav" class="nav-name" style="margin-right: var(--space-lg);">Chloe Rong</a>
-          <a href="#component-nav">Work</a>
+      <section id="layout" class="ds-section">
+        <h2>Layout and Material Sizes</h2>
+        <div class="ds-width-scale">
+          {widths.map(([className, token]) => <div class="ds-width-row"><code>{token}</code><span class={`ds-width-bar ${className}`}></span></div>)}
         </div>
-        <p class="ds-note">The site header pieces, live from <code>global.css</code>.</p>
+        <details class="ds-details">
+          <summary>Compatibility size tokens</summary>
+          <p>These values remain in the token file for older pages; calibrated collage components do not use retro-window controls.</p>
+          <ul class="ds-compatibility-list">{compatibilitySizes.map((token) => <li><code>{token}</code></li>)}</ul>
+        </details>
       </section>
 
-      <section id="component-list">
-        <h2>List Row</h2>
-        <div class="ds-demo">
-          <p style="margin: 0;"><a href="#component-list">First Project</a></p>
-          <p class="ds-use" style="margin: 0;">One line about this project.</p>
+      <section id="depth" class="ds-section">
+        <h2>Elevation and Depth</h2>
+        <div class="ds-elevation-grid">
+          <article class="ds-elevation-card ds-elevation-card--paper"><code>--shadow-paper</code><p>Resting paper</p></article>
+          <article class="ds-elevation-card ds-elevation-card--hover"><code>--shadow-paper-hover</code><p>Hover, focus, and drag</p></article>
+          <article class="ds-elevation-card ds-elevation-card--none"><code>--shadow-bevel</code><p>No bevel</p></article>
         </div>
-        <p class="ds-note">The work-index row pattern. As you build new components, add each one here as its own section.</p>
+        <p class="ds-note"><code>--shadow-window</code> aliases the standard paper shadow for compatibility. Shadow color comes from <code>--color-paper-shadow</code>.</p>
+      </section>
+
+      <section id="motion" class="ds-section">
+        <h2>Motion</h2>
+        <div class="ds-motion-grid">
+          <a class="ds-motion-link" href="#motion">Link state · <code>--motion-duration-fast</code></a>
+          <a class="ds-motion-media" href="#motion">Media scale · <code>--motion-duration-image</code> · <code>--motion-scale-image</code></a>
+        </div>
+        <p class="ds-note">Both transitions use <code>--motion-ease-out</code>; reduced-motion preference collapses their duration globally.</p>
+      </section>
+
+      <section id="navigation" class="ds-section">
+        <h2>Shared Navigation</h2>
+        <div class="ds-demo ds-demo--wide">
+          <nav class="ds-site-nav" aria-label="Navigation component example">
+            <a class="ds-site-name" href="#navigation">Chloe Rong</a>
+            <div class="ds-site-links"><a aria-current="page" href="#navigation">Home</a><a href="#navigation">Work</a><a href="#navigation">About</a><a href="#navigation">Contact</a></div>
+          </nav>
+        </div>
+        <p class="ds-note">Browser White, Hairline divider, Gabarito name, Courier Prime links, and a Lottery Pink current-page underline.</p>
+      </section>
+
+      <section id="identity-paper" class="ds-section">
+        <h2>Identity Paper</h2>
+        <div class="ds-demo ds-demo--canvas">
+          <article class="ds-identity-paper"><span class="ds-identity-tape" aria-hidden="true"></span><h3>Chloe Rong</h3><span class="ds-identity-rule" aria-hidden="true"></span><p>Designing for people,<br />stories, and human<br />connection.</p></article>
+        </div>
+      </section>
+
+      <section id="work-paper" class="ds-section">
+        <h2>Movable Work Paper</h2>
+        <div class="ds-demo ds-demo--canvas">
+          <article class="ds-work-paper" tabindex="0"><a class="ds-work-title" href="#work-paper">Product</a><div class="ds-project-slips"><a href="#project-slip">POYjector</a><a href="#project-slip">Product Sketches</a></div></article>
+        </div>
+        <p class="ds-note">The live homepage adds bounded pointer drag, arrow-key movement, Carbon focus, and global Escape reset.</p>
+      </section>
+
+      <section id="project-slip" class="ds-section">
+        <h2>Project Slip</h2>
+        <div class="ds-demo ds-demo--slips"><a class="ds-project-slip ds-project-slip--one" href="#project-slip">POYjector</a><a class="ds-project-slip ds-project-slip--two" href="#project-slip">Product Sketches</a></div>
+      </section>
+
+      <section id="work-index" class="ds-section">
+        <h2>Work Index</h2>
+        <div class="ds-demo ds-demo--wide">
+          <nav class="ds-work-index" aria-label="Work index example"><p>Work index</p><div><a class="ds-index-tab" href="#work-index">Product</a><a href="#work-index">POYjector</a><a href="#work-index">Product Sketches</a></div></nav>
+        </div>
+      </section>
+
+      <section id="media-frame" class="ds-section">
+        <h2>Collage Media Frame</h2>
+        <div class="ds-demo ds-demo--canvas"><a class="ds-media-frame" href="#media-frame"><span>Project media</span></a></div>
+      </section>
+
+      <section id="project-note" class="ds-section">
+        <h2>Project Note</h2>
+        <div class="ds-demo ds-demo--canvas"><article class="ds-project-note"><p>Product design · Interaction · Visual storytelling</p><h3>POYjector</h3><p>A classroom projector concept for interactive learning experiences, guided by transforming mascots.</p><a href="#project-note">Open the case study →</a></article></div>
+      </section>
+
+      <section id="footer-note" class="ds-section">
+        <h2>Footer Note</h2>
+        <div class="ds-demo ds-demo--canvas"><footer class="ds-shared-footer"><div class="ds-footer-note"><span class="ds-footer-tape" aria-hidden="true"></span><p>Have a project, role, or idea?</p><h3>Let’s make something people remember.</h3><a href="#footer-note">Instagram ↗</a></div><div class="ds-footer-meta"><p>&copy; 2026 Chloe Rong</p><p>Designed for people, stories, and human connection.</p><pre aria-hidden="true">o-   &lt;&gt;&lt;</pre></div></footer></div>
       </section>
     </article>
   </div>
 </Base>
 
 <style>
-  .ds-layout {
-    display: grid;
-    grid-template-columns: 160px minmax(0, 1fr);
-    gap: var(--space-xl);
-    align-items: start;
-  }
+  .ds-layout { display: grid; gap: var(--space-xl); align-items: start; }
+  .ds-nav { display: grid; gap: var(--space-lg); }
+  .ds-nav-label, .ds-kicker { margin: 0 0 var(--space-xs); font-size: var(--text-sm); text-transform: uppercase; }
+  .ds-nav ul, .ds-compatibility-list { display: grid; gap: var(--space-2xs); margin: 0; padding: 0; list-style: none; }
+  .ds-nav a { font-size: var(--text-sm); text-decoration: none; }
+  .ds-content { min-width: 0; }
+  .ds-header { max-width: var(--max-width-reading); }
+  .ds-header h1 { margin: 0 0 var(--space-sm); font-size: var(--text-3xl); }
+  .ds-header > p:last-child { margin: 0; color: var(--color-text-secondary); }
+  .ds-section { margin-top: var(--space-xl); }
+  .ds-section > h2 { margin: 0 0 var(--space-lg); padding-top: var(--space-lg); font-size: var(--text-xl); border-top: 1px solid var(--color-border); }
+  code { color: var(--color-text-secondary); font-size: var(--text-sm); }
+  .ds-note { color: var(--color-text-secondary); font-size: var(--text-sm); }
+  .ds-color-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(var(--size-button-min), 1fr)); gap: var(--space-md); }
+  .ds-color-card { display: grid; gap: var(--space-2xs); }
+  .ds-color-card strong, .ds-color-card p { margin: 0; font-size: var(--text-sm); }
+  .ds-color-card p { color: var(--color-text-secondary); }
+  .ds-swatch { display: block; min-height: var(--space-2xl); border: 1px solid var(--color-border); }
+  .ds-swatch--bg { background: var(--color-bg); } .ds-swatch--bg-subtle { background: var(--color-bg-subtle); }
+  .ds-swatch--text { background: var(--color-text); } .ds-swatch--text-secondary { background: var(--color-text-secondary); }
+  .ds-swatch--border { background: var(--color-border); } .ds-swatch--accent { background: var(--color-accent); }
+  .ds-swatch--accent-hover { background: var(--color-accent-hover); } .ds-swatch--paper { background: var(--color-paper); }
+  .ds-swatch--ink { background: var(--color-ink); } .ds-swatch--pink { background: var(--color-pink); }
+  .ds-swatch--blue { background: var(--color-blue); } .ds-swatch--cyan { background: var(--color-cyan); }
+  .ds-swatch--lime { background: var(--color-lime); } .ds-swatch--powder { background: var(--color-powder); }
+  .ds-swatch--tape { background: var(--color-tape); } .ds-swatch--shadow { background: var(--color-paper-shadow); }
+  .ds-swatch--focus { background: var(--color-focus); }
+  .ds-details { margin-top: var(--space-lg); padding: var(--space-md); background: var(--color-bg-subtle); }
+  .ds-details summary { cursor: pointer; }
+  .ds-details p { color: var(--color-text-secondary); font-size: var(--text-sm); }
+  .ds-token-list { display: grid; gap: var(--space-xs); }
+  .ds-token-list div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-md); }
+  .ds-token-list dd { margin: 0; }
+  .ds-font-pair, .ds-leading-grid, .ds-elevation-grid, .ds-motion-grid { display: grid; gap: var(--space-lg); }
+  .ds-font-card, .ds-leading-grid article { padding: var(--space-lg); background: var(--color-bg-subtle); }
+  .ds-font-card p { margin: var(--space-md) 0 0; font-size: var(--text-xl); }
+  .ds-font-card--display p { font-family: var(--font-display); font-weight: 850; }
+  .ds-font-card--body p { font-family: var(--font-body); }
+  .ds-type-scale { overflow-x: auto; }
+  .ds-type-row { display: grid; grid-template-columns: minmax(var(--size-button-min), .25fr) minmax(0, 1fr); gap: var(--space-md); align-items: baseline; padding: var(--space-xs) 0; border-bottom: 1px solid var(--color-border); }
+  .ds-type-sample { margin: 0; font-family: var(--font-display); line-height: var(--leading-tight); white-space: nowrap; }
+  .ds-type--2xs { font-size: var(--text-2xs); } .ds-type--sm { font-size: var(--text-sm); } .ds-type--base { font-size: var(--text-base); }
+  .ds-type--lg { font-size: var(--text-lg); } .ds-type--xl { font-size: var(--text-xl); } .ds-type--2xl { font-size: var(--text-2xl); }
+  .ds-type--3xl { font-size: var(--text-3xl); } .ds-type--identity { font-size: var(--text-identity); } .ds-type--section { font-size: var(--text-section); }
+  .ds-type--hero { font-size: var(--text-hero); } .ds-type--project { font-size: var(--text-project); }
+  .ds-leading-grid p { max-width: var(--max-width-reading); margin: var(--space-md) 0 0; }
+  .ds-leading--flat { line-height: var(--leading-flat); } .ds-leading--tight { line-height: var(--leading-tight); }
+  .ds-leading--normal { line-height: var(--leading-normal); } .ds-leading--loose { line-height: var(--leading-loose); }
+  .ds-tracking--display { font-family: var(--font-display); letter-spacing: var(--tracking-display); }
+  .ds-space-scale { display: grid; gap: var(--space-xs); }
+  .ds-space-row, .ds-width-row { display: grid; grid-template-columns: minmax(var(--size-button-min), .25fr) minmax(0, 1fr); gap: var(--space-md); align-items: center; }
+  .ds-space-bar { display: block; height: var(--space-sm); background: var(--color-accent); }
+  .ds-space--2xs { width: var(--space-2xs); } .ds-space--xs { width: var(--space-xs); } .ds-space--sm { width: var(--space-sm); }
+  .ds-space--md { width: var(--space-md); } .ds-space--lg { width: var(--space-lg); } .ds-space--xl { width: var(--space-xl); }
+  .ds-space--2xl { width: var(--space-2xl); } .ds-space--3xl { width: var(--space-3xl); } .ds-space--section { width: var(--space-section); max-width: 100%; }
+  .ds-radius-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(var(--size-button-min), 1fr)); gap: var(--space-lg); margin-top: var(--space-xl); }
+  .ds-radius-card { display: grid; gap: var(--space-xs); margin: 0; }
+  .ds-radius-demo { display: block; min-height: var(--space-2xl); background: var(--color-powder); border: 1px solid var(--color-border); }
+  .ds-radius--none { border-radius: var(--radius-none); } .ds-radius--sm { border-radius: var(--radius-sm); } .ds-radius--md { border-radius: var(--radius-md); }
+  .ds-radius-card figcaption { display: grid; } .ds-radius-card small { color: var(--color-text-secondary); }
+  .ds-width-scale { display: grid; gap: var(--space-sm); }
+  .ds-width-bar { display: block; height: var(--space-sm); max-width: 100%; background: var(--color-lime); }
+  .ds-width--page { width: var(--max-width-page); } .ds-width--reading { width: var(--max-width-reading); } .ds-width--hero { width: var(--max-width-hero); }
+  .ds-width--identity { width: var(--max-width-identity); } .ds-width--note { width: var(--max-width-note); } .ds-width--about { width: var(--max-width-about); } .ds-width--footer { width: var(--max-width-footer); }
+  .ds-compatibility-list { grid-template-columns: repeat(auto-fit, minmax(var(--size-button-min), 1fr)); }
+  .ds-elevation-card { min-height: var(--space-3xl); padding: var(--space-lg); background: var(--color-paper); }
+  .ds-elevation-card p { margin: var(--space-md) 0 0; }
+  .ds-elevation-card--paper { box-shadow: var(--shadow-paper); } .ds-elevation-card--hover { box-shadow: var(--shadow-paper-hover); } .ds-elevation-card--none { box-shadow: var(--shadow-bevel); border: 1px solid var(--color-border); }
+  .ds-motion-link, .ds-motion-media { display: grid; place-items: center; min-height: var(--space-2xl); padding: var(--space-lg); color: var(--color-ink); background: var(--color-powder); text-align: center; }
+  .ds-motion-link { transition: color var(--motion-duration-fast) var(--motion-ease-out); }
+  .ds-motion-link:hover { color: var(--color-accent-hover); }
+  .ds-motion-media { transition: transform var(--motion-duration-image) var(--motion-ease-out); }
+  .ds-motion-media:hover { transform: scale(var(--motion-scale-image)); }
+  .ds-demo { padding: var(--space-xl); overflow: hidden; background: var(--color-bg-subtle); }
+  .ds-demo--canvas { padding: var(--space-2xl) var(--space-xl); background: var(--color-bg); }
+  .ds-demo--wide { padding: var(--space-lg); }
+  .ds-site-nav { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); min-height: var(--space-2xl); border-bottom: 1px solid var(--color-border); }
+  .ds-site-name { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 800; text-transform: uppercase; text-decoration: none; }
+  .ds-site-links { display: flex; flex-wrap: wrap; gap: var(--space-lg); }
+  .ds-site-links a { font-size: var(--text-sm); text-decoration: none; }
+  .ds-site-links a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--color-pink); }
+  .ds-identity-paper { position: relative; max-width: var(--max-width-identity); padding: var(--space-xl); color: var(--color-ink); background: var(--color-pink); box-shadow: var(--shadow-paper); transform: rotate(-1deg); }
+  .ds-identity-paper h3 { margin: 0; font-size: var(--text-identity); font-weight: 850; line-height: var(--leading-flat); text-transform: uppercase; white-space: nowrap; }
+  .ds-identity-paper p { margin: 0; font-size: var(--text-lg); line-height: var(--leading-tight); text-transform: uppercase; }
+  .ds-identity-rule { display: block; height: 1px; margin: var(--space-lg) 0; background: var(--color-ink); }
+  .ds-identity-tape, .ds-footer-tape { position: absolute; height: var(--space-xl); background: color-mix(in srgb, var(--color-tape) 76%, transparent); }
+  .ds-identity-tape { top: calc(var(--space-md) * -1); left: calc(var(--space-md) * -1); width: 25%; transform: rotate(-12deg); }
+  .ds-work-paper { position: relative; min-height: calc(var(--space-3xl) * 1.55); padding: var(--space-xl) var(--space-lg); background: var(--color-lime); box-shadow: var(--shadow-paper); transform: rotate(3deg); transition: box-shadow var(--motion-duration-fast) var(--motion-ease-out); }
+  .ds-work-paper:hover, .ds-work-paper:focus-visible { box-shadow: var(--shadow-paper-hover); }
+  .ds-work-paper:focus-visible { outline-color: var(--color-ink); }
+  .ds-work-title { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 750; text-transform: uppercase; text-decoration: none; }
+  .ds-project-slips { position: absolute; top: var(--space-lg); right: calc(var(--space-md) * -1); display: grid; width: 52%; gap: var(--space-xs); }
+  .ds-project-slips a, .ds-project-slip { padding: var(--space-sm) var(--space-md); color: var(--color-ink); font-size: var(--text-sm); line-height: var(--leading-tight); text-transform: uppercase; text-decoration: none; background: var(--color-paper); box-shadow: var(--shadow-paper); }
+  .ds-demo--slips { display: flex; flex-wrap: wrap; gap: var(--space-md); min-height: var(--space-2xl); align-items: center; }
+  .ds-project-slip--one { transform: rotate(-4deg); } .ds-project-slip--two { transform: rotate(2deg); }
+  .ds-work-index { display: grid; gap: var(--space-lg); padding: var(--space-lg) 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+  .ds-work-index p { margin: 0; text-transform: uppercase; }
+  .ds-work-index div { display: grid; gap: var(--space-xs); }
+  .ds-work-index a { width: fit-content; font-size: var(--text-sm); text-decoration: none; }
+  .ds-index-tab { padding: 0 var(--space-sm); text-transform: uppercase; background: var(--color-lime); }
+  .ds-media-frame { display: grid; place-items: center; min-height: calc(var(--space-3xl) * 2); padding: var(--space-md); color: var(--color-ink); font-family: var(--font-display); font-size: var(--text-xl); text-decoration: none; background: var(--color-cyan); box-shadow: var(--shadow-paper); transform: rotate(-1deg); transition: transform var(--motion-duration-image) var(--motion-ease-out); }
+  .ds-media-frame:hover, .ds-media-frame:focus-visible { transform: rotate(-1deg) scale(var(--motion-scale-image)); }
+  .ds-project-note { max-width: var(--max-width-note); padding: var(--space-xl); color: var(--color-ink); background: var(--color-pink); box-shadow: var(--shadow-paper); transform: rotate(1deg); }
+  .ds-project-note > p:first-child { font-size: var(--text-sm); text-transform: uppercase; }
+  .ds-project-note h3 { margin: var(--space-sm) 0; font-size: var(--text-2xl); }
+  .ds-shared-footer { font-family: var(--font-body); }
+  .ds-footer-note { position: relative; max-width: var(--max-width-footer); margin: 0 auto var(--space-2xl); padding: var(--space-2xl); color: var(--color-ink); background: var(--color-pink); box-shadow: var(--shadow-paper); transform: rotate(-1deg); }
+  .ds-footer-note p { margin: 0 0 var(--space-md); text-transform: uppercase; }
+  .ds-footer-note h3 { max-width: 14ch; margin: 0 0 var(--space-xl); font-size: var(--text-section); }
+  .ds-footer-note a { font-size: var(--text-lg); }
+  .ds-footer-tape { top: calc(var(--space-md) * -1); left: var(--space-xl); width: 22%; transform: rotate(3deg); }
+  .ds-footer-meta { display: grid; gap: var(--space-xs); padding-top: var(--space-lg); font-size: var(--text-sm); border-top: 1px solid var(--color-border); }
+  .ds-footer-meta p, .ds-footer-meta pre { margin: 0; }
+  .ds-footer-meta pre { color: var(--color-blue); font: inherit; }
 
-  .ds-nav {
-    position: sticky;
-    top: var(--space-lg);
-    display: grid;
-    gap: var(--space-lg);
-  }
-
-  .ds-nav-label {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-text-secondary);
-    margin: 0 0 var(--space-xs);
-  }
-
-  .ds-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: var(--space-2xs);
-  }
-
-  .ds-nav a {
-    font-size: var(--text-sm);
-    text-decoration: none;
-  }
-
-  h1 {
-    font-size: var(--text-2xl);
-    margin: 0 0 var(--space-sm);
-  }
-
-  .ds-intro {
-    color: var(--color-text-secondary);
-    max-width: 40em;
-    margin: 0;
-  }
-
-  section {
-    margin-top: var(--space-xl);
-  }
-
-  h2 {
-    font-size: var(--text-xl);
-    margin: 0 0 var(--space-sm);
-    padding-top: var(--space-lg);
-    border-top: 1px solid var(--color-border);
-  }
-
-  code {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-  }
-
-  .ds-note,
-  .ds-use {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-  }
-
-  .ds-table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  .ds-table th {
-    font-size: var(--text-sm);
-    text-align: left;
-    padding: var(--space-xs) var(--space-sm) var(--space-xs) 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .ds-table td {
-    padding: var(--space-xs) var(--space-sm) var(--space-xs) 0;
-    border-bottom: 1px solid var(--color-border);
-    font-size: var(--text-sm);
-  }
-
-  .ds-chip {
-    display: block;
-    width: var(--space-xl);
-    height: var(--space-lg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-  }
-
-  .ds-type-row {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    align-items: baseline;
-    gap: var(--space-md);
-    padding: var(--space-xs) 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .ds-type-sample {
-    margin: 0;
-    line-height: var(--leading-tight);
-  }
-
-  .ds-space-scale {
-    display: grid;
-    gap: var(--space-xs);
-  }
-
-  .ds-space-row {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    align-items: center;
-    gap: var(--space-md);
-  }
-
-  .ds-space-bar {
-    height: var(--space-sm);
-    background: var(--color-accent);
-    border-radius: var(--radius-sm);
-  }
-
-  .ds-radius-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: var(--space-lg);
-  }
-
-  .ds-radius-card {
-    margin: 0;
-    display: grid;
-    gap: var(--space-xs);
-  }
-
-  .ds-radius-demo {
-    height: var(--space-2xl);
-    background: var(--color-bg-subtle);
-    border: 1px solid var(--color-border);
-  }
-
-  .ds-radius-card figcaption {
-    display: grid;
-  }
-
-  .ds-demo {
-    padding: var(--space-lg);
-    background: var(--color-bg-subtle);
-    border: 1px solid var(--color-border);
-    margin-bottom: var(--space-xs);
-  }
-
-  @media (max-width: 640px) {
-    .ds-layout {
-      grid-template-columns: 1fr;
-      gap: var(--space-lg);
-    }
-
-    .ds-nav {
-      position: static;
-      grid-auto-flow: column;
-      justify-content: start;
-      gap: var(--space-lg);
-      overflow-x: auto;
-    }
+  @media (min-width: 48rem) {
+    .ds-layout { grid-template-columns: minmax(var(--size-button-min), .22fr) minmax(0, 1fr); }
+    .ds-nav { position: sticky; top: var(--space-lg); }
+    .ds-font-pair, .ds-leading-grid, .ds-elevation-grid, .ds-motion-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ds-work-index { grid-template-columns: minmax(0, .6fr) minmax(0, 1fr); }
+    .ds-work-index div { padding-left: var(--space-xl); border-left: 1px solid var(--color-border); }
   }
 </style>

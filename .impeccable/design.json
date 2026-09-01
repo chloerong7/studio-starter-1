@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-17T19:56:43Z",
+  "title": "Design System: Chloe Rong Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "browser-white": { "role": "neutral", "displayName": "Browser White", "canonical": "#FCFCFA", "tonalRamp": ["#262626", "#4B4B4A", "#70706E", "#969694", "#B9B9B6", "#D8D8D5", "#EEEEEB", "#FCFCFA"] },
+      "soft-carbon": { "role": "neutral", "displayName": "Soft Carbon", "canonical": "#242528", "tonalRamp": ["#17181A", "#242528", "#44454A", "#66676D", "#8B8C91", "#B3B4B8", "#D9DADC", "#F2F2F3"] },
+      "lottery-pink": { "role": "primary", "displayName": "Lottery Pink", "canonical": "#FF4FA3", "tonalRamp": ["#4B092A", "#72113F", "#9A1D59", "#C42B75", "#E83C90", "#FF6BB2", "#FFA8D0", "#FFE5F1"] },
+      "screen-blue": { "role": "primary", "displayName": "Screen Blue", "canonical": "#1B82FF", "tonalRamp": ["#061D42", "#082F68", "#0C478F", "#1261B8", "#1B82FF", "#65A9FF", "#A9D1FF", "#E8F3FF"] },
+      "portal-cyan": { "role": "secondary", "displayName": "Portal Cyan", "canonical": "#46D9E8", "tonalRamp": ["#073237", "#0A5057", "#11717A", "#1D929E", "#2DB7C4", "#46D9E8", "#91EBF3", "#E4FAFC"] },
+      "prize-lime": { "role": "tertiary", "displayName": "Prize Lime", "canonical": "#D6EE45", "tonalRamp": ["#2E3505", "#4C5808", "#6D7C0D", "#8FA216", "#B4C929", "#D6EE45", "#E9F58D", "#F8FCD9"] },
+      "powder-blue": { "role": "secondary", "displayName": "Powder Blue", "canonical": "color-mix(in srgb, #1B82FF 34%, #FCFCFA)", "tonalRamp": ["#1B2D49", "#304D77", "#4A6FA5", "#688FD0", "#8DAFF0", "#ABCCFD", "#D1E2FE", "#F0F6FF"] },
+      "warm-tape": { "role": "neutral", "displayName": "Warm Tape", "canonical": "color-mix(in srgb, #FCFCFA 76%, #242528)", "tonalRamp": ["#272727", "#4A4A49", "#70706E", "#969694", "#B5B5B2", "#CCCCCA", "#E4E4E1", "#F7F7F4"] },
+      "muted-text": { "role": "neutral", "displayName": "Muted Text", "canonical": "color-mix(in srgb, #242528 72%, #FCFCFA)", "tonalRamp": ["#1B1C1E", "#343538", "#505155", "#6C6D72", "#909196", "#B5B6BA", "#D8D9DB", "#F2F2F3"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "color-mix(in srgb, #242528 24%, #FCFCFA)", "tonalRamp": ["#242528", "#48494C", "#6D6E71", "#929396", "#B6B7B9", "#D0D1D2", "#E5E5E6", "#F7F7F7"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Identity Display", "purpose": "Uppercase identity statements on the lead paper." },
+      "section": { "displayName": "Editorial Section", "purpose": "Major project and section transitions." },
+      "title": { "displayName": "Project Title", "purpose": "Category and project names." },
+      "body": { "displayName": "Body Note", "purpose": "Descriptions, slogans, and long-form information." },
+      "label": { "displayName": "Interface Label", "purpose": "Navigation, metadata, indexes, and interaction instructions." }
+    },
+    "shadows": [
+      { "name": "paper", "value": "0.55rem 0.7rem 1.4rem var(--color-paper-shadow)", "purpose": "Resting colored papers, media frames, captions, and footer note." },
+      { "name": "paper-hover", "value": "0.8rem 1rem 1.8rem var(--color-paper-shadow)", "purpose": "Hover, keyboard focus, and active dragging on movable papers." }
+    ],
+    "motion": [
+      { "name": "duration-fast", "value": "160ms", "purpose": "Link, focus, and paper state transitions." },
+      { "name": "duration-image", "value": "320ms", "purpose": "Restrained project-media scale response." },
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default authored state easing." },
+      { "name": "scale-image", "value": "1.02", "purpose": "Maximum project-media hover scale." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "48rem" },
+      { "name": "desktop", "value": "72rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Shared Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Uppercase identity and compact portfolio destinations on Browser White.",
+      "html": "<nav class=\"ds-site-nav\"><a class=\"ds-nav-name\" href=\"#\">Chloe Rong</a><div class=\"ds-nav-links\"><a aria-current=\"page\" href=\"#\">Home</a><a href=\"#\">Work</a><a href=\"#\">About</a></div></nav>",
+      "css": ".ds-site-nav{display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);min-height:var(--space-2xl);font-family:var(--font-body);border-bottom:1px solid var(--color-border)}.ds-nav-name{font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;text-transform:uppercase;text-decoration:none}.ds-nav-links{display:flex;gap:var(--space-lg)}.ds-nav-links a{font-size:var(--text-sm);color:var(--color-ink);text-decoration:none}.ds-nav-links a[aria-current=page]{text-decoration:underline;text-decoration-color:var(--color-pink)}.ds-site-nav a:focus-visible{outline:var(--space-2xs) solid var(--color-focus);outline-offset:var(--space-2xs)}"
+    },
+    {
+      "name": "Identity Paper",
+      "kind": "card",
+      "refersTo": "identity-paper",
+      "description": "The taped pink identity statement used at the start of Home.",
+      "html": "<article class=\"ds-identity-paper\"><span class=\"ds-identity-tape\"></span><h2>Chloe Rong</h2><span class=\"ds-identity-rule\"></span><p>Designing for people, stories, and human connection.</p></article>",
+      "css": ".ds-identity-paper{position:relative;max-width:var(--max-width-identity);padding:var(--space-xl);color:var(--color-ink);background:var(--color-pink);box-shadow:var(--shadow-paper);transform:rotate(-1deg)}.ds-identity-paper h2{margin:0;font-family:var(--font-display);font-size:var(--text-identity);font-weight:850;line-height:var(--leading-flat);letter-spacing:var(--tracking-display);text-transform:uppercase}.ds-identity-paper p{margin:0;font-family:var(--font-body);font-size:var(--text-lg);text-transform:uppercase}.ds-identity-rule{display:block;height:1px;margin:var(--space-lg) 0;background:var(--color-ink)}.ds-identity-tape{position:absolute;top:calc(var(--space-md)*-1);left:calc(var(--space-md)*-1);width:25%;height:var(--space-xl);background:color-mix(in srgb,var(--color-tape) 76%,transparent);transform:rotate(-12deg)}"
+    },
+    {
+      "name": "Movable Work Paper",
+      "kind": "custom",
+      "refersTo": "work-paper-product",
+      "description": "A colored discipline paper with layered project slips and deliberate movement states.",
+      "html": "<article class=\"ds-work-paper\" tabindex=\"0\"><a class=\"ds-work-title\" href=\"#\">Product</a><div class=\"ds-project-slips\"><a href=\"#\">POYjector</a><a href=\"#\">Product Sketches</a></div></article>",
+      "css": ".ds-work-paper{position:relative;min-height:calc(var(--space-3xl)*1.4);padding:var(--space-xl) var(--space-lg);background:var(--color-lime);box-shadow:var(--shadow-paper);transform:rotate(3deg);transition:box-shadow var(--motion-duration-fast) var(--motion-ease-out)}.ds-work-paper:hover,.ds-work-paper:focus-visible{box-shadow:var(--shadow-paper-hover)}.ds-work-paper:focus-visible{outline:var(--space-2xs) solid var(--color-ink);outline-offset:var(--space-2xs)}.ds-work-title{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:750;text-transform:uppercase;text-decoration:none}.ds-project-slips{position:absolute;top:var(--space-lg);right:calc(var(--space-md)*-1);display:grid;width:52%;gap:var(--space-xs)}.ds-project-slips a{padding:var(--space-sm) var(--space-md);color:var(--color-ink);font-family:var(--font-body);font-size:var(--text-sm);text-transform:uppercase;text-decoration:none;background:var(--color-paper);box-shadow:var(--shadow-paper)}"
+    },
+    {
+      "name": "Work Index",
+      "kind": "nav",
+      "description": "A structured redundant route to every destination represented by movable papers.",
+      "html": "<nav class=\"ds-work-index\"><p>Work index</p><div><a class=\"ds-index-tab\" href=\"#\">Product</a><a href=\"#\">POYjector</a><a href=\"#\">Product Sketches</a></div></nav>",
+      "css": ".ds-work-index{display:grid;grid-template-columns:minmax(0,.6fr) minmax(0,1fr);gap:var(--space-lg);padding:var(--space-lg) 0;font-family:var(--font-body);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border)}.ds-work-index p{margin:0;text-transform:uppercase}.ds-work-index div{display:grid;gap:var(--space-xs);padding-left:var(--space-xl);border-left:1px solid var(--color-border)}.ds-work-index a{width:fit-content;color:var(--color-ink);font-size:var(--text-sm);text-decoration:none}.ds-index-tab{padding:0 var(--space-sm);text-transform:uppercase;background:var(--color-lime)}"
+    },
+    {
+      "name": "Collage Media Frame",
+      "kind": "card",
+      "description": "A square-edged accent backing that gives project media one physical layer.",
+      "html": "<a class=\"ds-media-frame\" href=\"#\"><span>Project media</span></a>",
+      "css": ".ds-media-frame{display:grid;place-items:center;min-height:var(--space-3xl);padding:var(--space-md);color:var(--color-ink);font-family:var(--font-display);font-size:var(--text-xl);text-decoration:none;background:var(--color-cyan);box-shadow:var(--shadow-paper);transform:rotate(-1deg);transition:transform var(--motion-duration-image) var(--motion-ease-out)}.ds-media-frame:hover,.ds-media-frame:focus-visible{transform:rotate(-1deg) scale(var(--motion-scale-image))}.ds-media-frame:focus-visible{outline:var(--space-2xs) solid var(--color-focus);outline-offset:var(--space-2xs)}"
+    },
+    {
+      "name": "Project Note",
+      "kind": "card",
+      "refersTo": "project-note",
+      "description": "An overlapping accent note for project metadata, title, and compact writing.",
+      "html": "<article class=\"ds-project-note\"><p>Product design</p><h3>POYjector</h3><p>An interactive classroom concept guided by transforming mascots.</p><a href=\"#\">Open the case study →</a></article>",
+      "css": ".ds-project-note{max-width:var(--max-width-note);padding:var(--space-xl);color:var(--color-ink);font-family:var(--font-body);background:var(--color-pink);box-shadow:var(--shadow-paper);transform:rotate(1deg)}.ds-project-note>p:first-child{font-size:var(--text-sm);text-transform:uppercase}.ds-project-note h3{margin:var(--space-sm) 0;font-family:var(--font-display);font-size:var(--text-2xl);letter-spacing:var(--tracking-display)}.ds-project-note a{color:var(--color-ink)}"
+    },
+    {
+      "name": "Shared Footer",
+      "kind": "card",
+      "refersTo": "footer-note",
+      "description": "The taped invitation, contact links, metadata divider, and ASCII close of the shared shell.",
+      "html": "<footer class=\"ds-shared-footer\"><div class=\"ds-footer-note\"><span class=\"ds-footer-tape\"></span><p>Have a project, role, or idea?</p><h2>Let's make something people remember.</h2><a href=\"#\">Instagram ↗</a></div><div class=\"ds-footer-meta\"><p>© 2026 Chloe Rong</p><p>Designed for people, stories, and human connection.</p><pre>o-   &lt;&gt;&lt;</pre></div></footer>",
+      "css": ".ds-shared-footer{font-family:var(--font-body)}.ds-footer-note{position:relative;max-width:var(--max-width-footer);margin:0 auto var(--space-2xl);padding:var(--space-2xl);color:var(--color-ink);background:var(--color-pink);box-shadow:var(--shadow-paper);transform:rotate(-1deg)}.ds-footer-note p{margin:0 0 var(--space-md);text-transform:uppercase}.ds-footer-note h2{max-width:14ch;margin:0 0 var(--space-xl);font-family:var(--font-display);font-size:var(--text-section);line-height:var(--leading-tight);letter-spacing:var(--tracking-display)}.ds-footer-note a{color:var(--color-ink);font-size:var(--text-lg)}.ds-footer-tape{position:absolute;top:calc(var(--space-md)*-1);left:var(--space-xl);width:22%;height:var(--space-xl);background:color-mix(in srgb,var(--color-tape) 78%,transparent);transform:rotate(3deg)}.ds-footer-meta{display:grid;gap:var(--space-xs);padding-top:var(--space-lg);font-size:var(--text-sm);border-top:1px solid var(--color-border)}.ds-footer-meta p,.ds-footer-meta pre{margin:0}.ds-footer-meta pre{color:var(--color-blue)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Interactive Digital Sketchbook",
+    "overview": "The portfolio feels like a bright browser canvas where Chloe has arranged paper studies, project fragments, handwritten-interface notes, and small ASCII marks. It is airy and object-driven rather than dense: personality concentrates in a few overlapping clusters while Browser White preserves room around them. The system combines playful direct manipulation with editorial restraint. Personal and navigation surfaces can behave like movable collage; project evidence remains legible, structured, and dominant. Every interaction requires deliberate input, and every destination remains usable without moving an object.",
+    "keyCharacteristics": ["Flat digital papers with crisp cut edges and no printed grain.", "Asymmetric composition with generous negative space and controlled overlap.", "Gabarito display statements paired with Courier Prime information and notes.", "Saturated accent fields used as objects, not scattered decoration.", "Purposeful drag, keyboard, hover, and focus states without ambient animation."],
+    "rules": [
+      { "name": "The Flat Field Rule", "body": "Accent colors appear as decisive, solid paper surfaces or compact labels; do not turn them into gradients, glows, or decorative noise.", "section": "colors" },
+      { "name": "The Carbon Focus Rule", "body": "Global links use Screen Blue focus, while focus on colored papers switches to Soft Carbon for reliable contrast.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Gabarito makes the statement; Courier Prime explains, labels, and guides.", "section": "typography" },
+      { "name": "The Concentrated Cluster Rule", "body": "Keep large areas quiet, then group related papers, captions, or images closely enough to read as one authored object.", "section": "layout" },
+      { "name": "The One Shadow Rule", "body": "A paper receives one soft offset shadow and no simultaneous border, glow, or glass treatment.", "section": "elevation" }
+    ],
+    "dos": ["Do use flat accent papers, decisive scale changes, and generous Browser White space.", "Do keep project media and imported writing primary when extending the system to work pages.", "Do preserve semantic structure, descriptive alt text, keyboard access, reduced-motion behavior, and redundant link access for draggable content.", "Do use only named tokens from src/styles/tokens.css for color, type size, spacing, radius, shadow, and motion."],
+    "donts": ["Don't add paper grain, gradients, glass, glossy effects, or generic rounded cards to calibrated collage components.", "Don't revive retro program windows, selection handles, doubled frame layers, or dark desktop chrome.", "Don't add ambient drifting or automatic decorative motion; interaction begins with intentional user input.", "Don't copy composition, imagery, or typography literally from reference images or generated mockups when it is absent from the implemented system."]
+  }
+}

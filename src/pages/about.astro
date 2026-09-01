@@ -1,27 +1,372 @@
 ---
 import Base from '../layouts/Base.astro';
+import poyjectorProcess from '../assets/projects/poyjector/process.jpg';
+import sketchesCard from '../assets/projects/product-sketches/card.jpg';
+
+/*
+  THESIS: About is Chloe's studio desk, not a résumé column or portrait-led biography.
+  OWN-WORLD: Browser White, a taped pink identity paper, cyan and lime work fragments, compact influence slips, Gabarito statements, and Courier Prime notes.
+  STORY: Visitors meet Chloe, see the real work behind her perspective, understand her people-centered approach and influences, then continue to Work or make contact.
+  FIRST VIEWPORT: A large pink personal statement occupies the left while overlapping POYjector and sketchbook fragments build a working desk on the right.
+  FORM: Assigned structure six — a three-part studio desk with identity, evidence, and understated interests; surface seed 40774a88.
+*/
 ---
 
-<Base title="About — Chloe Rong">
-  <h1>About</h1>
-  <p class="bio">A short bio: where you're from, what you study, what kind of work pulls you in. Write it like you talk.</p>
-  <h2>Contact</h2>
-  <p>Email, and anywhere else you want people to find you.</p>
+<Base
+  title="About — Chloe Rong"
+  description="About Chloe Rong, a designer focused on people, stories, human interaction, and impact."
+>
+  <article class="about-page">
+    <section class="about-opening" aria-labelledby="about-title">
+      <div class="about-statement">
+        <span class="about-tape" aria-hidden="true"></span>
+        <p class="about-kicker">Hello, I’m Chloe.</p>
+        <h1 id="about-title">A designer for people, stories, and human connection.</h1>
+        <p>I’m a designer focused on human interaction and impact. I place the people a design is made for at the center—and leave room for play.</p>
+      </div>
+
+      <div class="about-desk" aria-label="Project fragments from Chloe’s studio">
+        <figure class="desk-fragment desk-fragment--process">
+          <a href="/work/poyjector/" aria-label="Open the POYjector case study">
+            <img
+              src={poyjectorProcess.src}
+              width={poyjectorProcess.width}
+              height={poyjectorProcess.height}
+              alt="POYjector sketches, interaction notes, mascot studies, and classroom storyboard frames"
+              loading="eager"
+            />
+          </a>
+          <figcaption>People first.</figcaption>
+        </figure>
+
+        <figure class="desk-fragment desk-fragment--sketchbook">
+          <a href="/work/product-sketches/" aria-label="Open Product Sketches">
+            <img
+              src={sketchesCard.src}
+              width={sketchesCard.width}
+              height={sketchesCard.height}
+              alt="Open sketchbook filled with nightlight, hover-drone, and sheep-shaped product studies"
+              loading="eager"
+            />
+          </a>
+          <figcaption>Product sketches and studies.</figcaption>
+        </figure>
+
+        <pre class="desk-fish" aria-hidden="true">  ,&#10; ()&lt;&#10;  `</pre>
+      </div>
+    </section>
+
+    <section class="perspective-section" aria-labelledby="perspective-title">
+      <header class="perspective-heading">
+        <p>My perspective</p>
+        <h2 id="perspective-title">Make interaction feel thoughtful, clear, and human.</h2>
+      </header>
+
+      <div class="perspective-copy">
+        <p class="perspective-lead">I’m interested in design that makes interaction feel thoughtful, clear, and human.</p>
+        <p>My practice moves between product design, games, graphics, and physical making. That range gives me different ways to understand a problem—and keeps the work playful.</p>
+      </div>
+
+      <aside class="role-note" aria-label="Current focus">
+        <p>Current focus</p>
+        <strong>Product design roles</strong>
+        <span>Designing for interaction, visual language, and human impact.</span>
+      </aside>
+    </section>
+
+    <section class="influences-section" aria-labelledby="influences-title">
+      <div class="influences-copy">
+        <p>A few quiet clues</p>
+        <h2 id="influences-title">What keeps showing up.</h2>
+        <p>I’m deeply inspired by the internet, printed media, movies, and games.</p>
+      </div>
+
+      <ul class="influence-board" aria-label="Chloe’s influences">
+        <li class="influence-slip influence-slip--internet"><span>Internet</span><pre aria-hidden="true">[ www ]</pre></li>
+        <li class="influence-slip influence-slip--print"><span>Printed media</span><pre aria-hidden="true">|::|</pre></li>
+        <li class="influence-slip influence-slip--movies"><span>Movies</span><pre aria-hidden="true">&gt; _ &gt;</pre></li>
+        <li class="influence-slip influence-slip--games"><span>Games</span><pre aria-hidden="true">+ [ ]</pre></li>
+      </ul>
+    </section>
+
+    <section class="about-close" aria-labelledby="close-title">
+      <div class="close-paper">
+        <p>What I’m looking for</p>
+        <h2 id="close-title">A product design role with people at the center.</h2>
+        <p>I’d love to meet recruiters and studios who care about thoughtful interaction, memorable visual language, and work that has human impact.</p>
+        <div class="close-links">
+          <a href="/work/">Explore my work →</a>
+          <a href="#contact">Contact me ↓</a>
+        </div>
+      </div>
+      <pre class="close-fish" aria-hidden="true">o-   &lt;&gt;&lt;</pre>
+    </section>
+  </article>
 </Base>
 
 <style>
-  h1 {
-    font-size: var(--text-2xl);
-    margin: 0 0 var(--space-md);
+  .about-page { width: min(100%, var(--max-width-hero)); margin: 0 auto; }
+
+  .about-opening {
+    display: grid;
+    gap: var(--space-2xl);
+    padding-top: var(--space-xl);
   }
 
-  .bio {
-    max-width: 36em;
-    line-height: var(--leading-loose);
+  .about-statement {
+    position: relative;
+    z-index: 3;
+    align-self: start;
+    padding: var(--space-xl);
+    color: var(--color-ink);
+    background: var(--color-pink);
+    box-shadow: var(--shadow-paper);
+    transform: rotate(-1deg);
   }
 
-  h2 {
+  .about-tape {
+    position: absolute;
+    top: calc(var(--space-lg) * -1);
+    left: var(--space-xl);
+    width: calc(var(--space-3xl) * 1.15);
+    height: var(--space-xl);
+    background: var(--color-tape);
+    opacity: .78;
+    transform: rotate(-4deg);
+  }
+
+  .about-kicker,
+  .perspective-heading > p,
+  .role-note > p,
+  .influences-copy > p:first-child,
+  .close-paper > p:first-child {
+    margin: 0 0 var(--space-sm);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+  }
+
+  .about-statement h1 {
+    max-width: 13ch;
+    margin: 0 0 var(--space-lg);
+    font-size: var(--text-project);
+    font-weight: 850;
+    line-height: var(--leading-flat);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+  }
+
+  .about-statement > p:last-child {
+    max-width: var(--max-width-reading);
+    margin: 0;
+    font-size: var(--text-lg);
+    line-height: var(--leading-normal);
+  }
+
+  .about-desk {
+    position: relative;
+    min-height: calc(var(--space-3xl) * 4.4);
+  }
+
+  .desk-fragment {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: var(--space-md);
+    color: var(--color-ink);
+    box-shadow: var(--shadow-paper);
+  }
+
+  .desk-fragment > a { display: block; overflow: hidden; }
+  .desk-fragment img { display: block; width: 100%; height: auto; transition: transform var(--motion-duration-image) var(--motion-ease-out); }
+  .desk-fragment > a:hover img,
+  .desk-fragment > a:focus-visible img { transform: scale(var(--motion-scale-image)); }
+  .desk-fragment > a:focus-visible { outline-color: var(--color-ink); }
+
+  .desk-fragment figcaption {
+    margin-top: var(--space-sm);
+    font-size: var(--text-sm);
+    line-height: var(--leading-tight);
+  }
+
+  .desk-fragment--process {
+    width: 92%;
+    margin-left: auto;
+    background: var(--color-cyan);
+    transform: rotate(1deg);
+  }
+
+  .desk-fragment--process figcaption { max-width: 42%; margin-left: auto; text-align: right; }
+
+  .desk-fragment--sketchbook {
+    width: 72%;
+    margin-top: calc(var(--space-xl) * -1);
+    background: var(--color-lime);
+    transform: rotate(-2deg);
+  }
+
+  .desk-fish {
+    position: absolute;
+    right: var(--space-sm);
+    bottom: var(--space-sm);
+    margin: 0;
+    color: var(--color-blue);
+    font: inherit;
     font-size: var(--text-xl);
-    margin: var(--space-xl) 0 var(--space-sm);
+    line-height: var(--leading-tight);
+  }
+
+  .perspective-section {
+    position: relative;
+    display: grid;
+    gap: var(--space-xl);
+    padding-top: var(--space-section);
+  }
+
+  .perspective-heading h2,
+  .influences-copy h2,
+  .close-paper h2 {
+    margin: 0;
+    font-size: var(--text-section);
+    font-weight: 850;
+    line-height: var(--leading-flat);
+    letter-spacing: var(--tracking-display);
+    text-transform: uppercase;
+  }
+
+  .perspective-heading h2 { max-width: 12ch; }
+
+  .perspective-copy {
+    max-width: var(--max-width-reading);
+    padding: var(--space-xl);
+    background: var(--color-paper);
+    box-shadow: var(--shadow-paper);
+    transform: rotate(1deg);
+  }
+
+  .perspective-copy p { margin: 0; line-height: var(--leading-normal); }
+  .perspective-copy p + p { margin-top: var(--space-lg); }
+  .perspective-lead { font-size: var(--text-xl); }
+
+  .role-note {
+    max-width: var(--max-width-note);
+    padding: var(--space-lg);
+    color: var(--color-ink);
+    background: var(--color-powder);
+    box-shadow: var(--shadow-paper);
+    transform: rotate(-2deg);
+  }
+
+  .role-note strong {
+    display: block;
+    margin-bottom: var(--space-sm);
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    line-height: var(--leading-tight);
+  }
+
+  .role-note span { display: block; line-height: var(--leading-normal); }
+
+  .influences-section {
+    display: grid;
+    gap: var(--space-xl);
+    padding-top: var(--space-section);
+  }
+
+  .influences-copy h2 { max-width: 11ch; }
+  .influences-copy > p:last-child { max-width: var(--max-width-reading); margin: var(--space-lg) 0 0; font-size: var(--text-lg); line-height: var(--leading-normal); }
+
+  .influence-board {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .influence-slip {
+    display: grid;
+    place-items: center;
+    min-height: calc(var(--space-3xl) * 1.35);
+    padding: var(--space-lg);
+    color: var(--color-ink);
+    text-align: center;
+    box-shadow: var(--shadow-paper);
+  }
+
+  .influence-slip span { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 750; }
+  .influence-slip pre { margin: var(--space-md) 0 0; font: inherit; }
+  .influence-slip--internet { background: var(--color-cyan); transform: rotate(-2deg); }
+  .influence-slip--print { background: var(--color-lime); transform: rotate(1deg); }
+  .influence-slip--movies { background: var(--color-pink); transform: rotate(2deg); }
+  .influence-slip--games { background: var(--color-powder); transform: rotate(-1deg); }
+
+  .about-close {
+    position: relative;
+    padding: var(--space-section) 0;
+  }
+
+  .close-paper {
+    position: relative;
+    z-index: 2;
+    max-width: var(--max-width-about);
+    padding: var(--space-xl);
+    background: var(--color-lime);
+    box-shadow: var(--shadow-paper);
+    transform: rotate(-1deg);
+  }
+
+  .close-paper h2 { max-width: 13ch; }
+  .close-paper > p:not(:first-child) { max-width: var(--max-width-reading); margin: var(--space-lg) 0 0; font-size: var(--text-lg); line-height: var(--leading-normal); }
+
+  .close-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md) var(--space-xl);
+    margin-top: var(--space-xl);
+  }
+
+  .close-links a { color: var(--color-ink); font-size: var(--text-lg); }
+  .close-links a:focus-visible { outline-color: var(--color-ink); }
+
+  .close-fish {
+    position: absolute;
+    right: var(--space-lg);
+    bottom: var(--space-xl);
+    z-index: 3;
+    margin: 0;
+    color: var(--color-pink);
+    font: inherit;
+    font-size: var(--text-xl);
+  }
+
+  @media (min-width: 48rem) {
+    .about-opening { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: start; gap: var(--space-lg); min-height: calc(var(--space-3xl) * 5); }
+    .about-statement { margin-top: var(--space-2xl); }
+    .about-desk { min-height: calc(var(--space-3xl) * 5); }
+    .desk-fragment--process { width: 94%; }
+    .desk-fragment--sketchbook { width: 68%; margin-top: calc(var(--space-2xl) * -1); }
+
+    .perspective-section { grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); align-items: start; }
+    .perspective-heading { grid-row: span 2; padding-top: var(--space-xl); }
+    .perspective-copy { margin-left: var(--space-xl); padding: var(--space-2xl); }
+    .role-note { justify-self: end; margin-top: calc(var(--space-lg) * -1); margin-right: var(--space-xl); }
+
+    .influences-section { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: center; gap: var(--space-2xl); }
+    .influence-board { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); }
+    .influence-slip { min-height: calc(var(--space-3xl) * 1.55); }
+
+    .close-paper { width: 84%; margin-left: auto; padding: var(--space-2xl); }
+    .close-fish { right: auto; left: var(--space-xl); bottom: var(--space-2xl); }
+  }
+
+  @media (min-width: 72rem) {
+    .about-opening { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: var(--space-2xl); }
+    .about-desk { margin-right: var(--space-xl); }
+    .desk-fragment--sketchbook { margin-left: calc(var(--space-xl) * -1); }
+    .perspective-section,
+    .influences-section { padding-right: var(--space-xl); padding-left: var(--space-xl); }
+    .role-note { margin-right: var(--space-2xl); }
+    .about-close { padding-right: var(--space-xl); padding-left: var(--space-xl); }
   }
 </style>

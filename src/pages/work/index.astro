@@ -1,32 +1,317 @@
 ---
 import Base from '../../layouts/Base.astro';
+import poyjectorHero from '../../assets/projects/poyjector/hero.png';
+import sketchesCard from '../../assets/projects/product-sketches/card.jpg';
+import galleryCover from '../../assets/projects/gallery-of-spirits/cover.jpg';
+import beexonCard from '../../assets/projects/beexon/card.png';
+import conceptCard from '../../assets/projects/concept-art/card.png';
+import limelightPoster from '../../assets/projects/graphics/limelight-poster.png';
+import foundation from '../../assets/projects/sculpture/foundation.jpg';
+import ladyWithFabric from '../../assets/projects/traditional/lady-with-fabric-oil.jpg';
 
-const projects = [
-  ['Product', '/product/', 'POYjector and Product Sketches'],
-  ['Games', '/games/', 'Gallery of Spirits, Beexon, and Concept Art'],
-  ['Graphic Design', '/graphics/', 'Show posters for a character world'],
-  ['Sculpture and Installation', '/sculpture/', '1984, Foundation, and Countdown'],
-  ['Traditional Art', '/traditional/', 'Oil, gouache, acrylic, ink, and collage'],
-];
+/*
+  THESIS: Work is an editorial contact sheet, not a uniform portfolio-card grid.
+  OWN-WORLD: Browser White, flat category papers, square media frames, separate caption slips, Gabarito titles, and Courier Prime indexing.
+  STORY: Product design leads; visitors then scan games and the broader visual practice without losing direct project routes.
+  FIRST VIEWPORT: A compact Work masthead and three-paper category index give way immediately to the large POYjector specimen.
+  FORM: Assigned structure seven — an uneven category ledger with varied project specimens; surface seed 603190c9.
+*/
 ---
 
-<Base title="Work — Chloe Rong">
-  <h1>Work</h1>
-  <p class="intro">Selected projects. Each one tells a story: what you made, why, and what you learned.</p>
-  <ul class="work-list">
-    {projects.map(([title, href, description]) => (
-      <li>
-        <a href={href}>{title}</a>
-        <p>{description}</p>
-      </li>
-    ))}
-  </ul>
+<Base
+  title="Work — Chloe Rong"
+  description="Selected product design, games, graphics, sculpture, and traditional work by Chloe Rong."
+>
+  <article class="work-directory">
+    <header class="directory-header">
+      <div class="directory-title">
+        <p>Selected work</p>
+        <h1>Work</h1>
+        <p class="directory-intro">Product design leads this index, with games, graphics, sculpture, and traditional work alongside it.</p>
+      </div>
+
+      <nav class="category-index" aria-label="Work categories">
+        <a class="category-tab category-tab--product" href="#product"><span>Product</span><small>02 projects</small></a>
+        <a class="category-tab category-tab--games" href="#games"><span>Games</span><small>03 projects</small></a>
+        <a class="category-tab category-tab--visual" href="#visual-work"><span>Graphics + Art</span><small>03 collections</small></a>
+      </nav>
+    </header>
+
+    <section id="product" class="work-category work-category--product" aria-labelledby="product-title">
+      <header class="category-heading category-heading--lime">
+        <p>First priority</p>
+        <h2 id="product-title">Product</h2>
+        <p>Interactive systems and the sketchbook thinking behind them.</p>
+      </header>
+
+      <pre class="category-fish category-fish--pink" aria-hidden="true">o-   &lt;&gt;&lt;</pre>
+
+      <div class="project-ledger project-ledger--product">
+        <article class="project-entry project-entry--poyjector">
+          <a class="project-media project-media--cyan" href="/work/poyjector/" aria-label="Open the POYjector case study">
+            <img
+              src={poyjectorHero.src}
+              width={poyjectorHero.width}
+              height={poyjectorHero.height}
+              alt="Sketches for a classroom projector with transforming mascots and an interactive learning storyboard"
+              loading="eager"
+            />
+          </a>
+          <div class="project-caption project-caption--pink">
+            <p>Product design · Interaction · Visual storytelling</p>
+            <h3><a href="/work/poyjector/">POYjector</a></h3>
+            <p>A classroom projector concept for interactive learning experiences, guided by transforming mascots.</p>
+            <a class="project-open" href="/work/poyjector/">Open case study →</a>
+          </div>
+        </article>
+
+        <article class="project-entry project-entry--sketches">
+          <a class="project-media project-media--lime" href="/work/product-sketches/" aria-label="Open Product Sketches">
+            <img
+              src={sketchesCard.src}
+              width={sketchesCard.width}
+              height={sketchesCard.height}
+              alt="Open sketchbook filled with nightlight, hover-drone, and sheep-shaped product studies"
+              loading="lazy"
+            />
+          </a>
+          <div class="project-caption project-caption--paper">
+            <p>Process archive</p>
+            <h3><a href="/work/product-sketches/">Product Sketches</a></h3>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="games" class="work-category work-category--games" aria-labelledby="games-title">
+      <header class="category-heading category-heading--cyan">
+        <p>Collaborative worlds</p>
+        <h2 id="games-title">Games</h2>
+        <p>Systems, production, character work, and interface art.</p>
+      </header>
+
+      <pre class="category-fish category-fish--lime" aria-hidden="true">  ,&#10; ()&lt;&#10;  `</pre>
+
+      <div class="project-ledger project-ledger--games">
+        <article class="project-entry project-entry--gallery">
+          <a class="project-media project-media--pink" href="/work/gallery-of-spirits/" aria-label="Open Gallery of Spirits">
+            <img
+              src={galleryCover.src}
+              width={galleryCover.width}
+              height={galleryCover.height}
+              alt="Dark museum scene centered on an illuminated dinosaur skeleton in Gallery of Spirits"
+              loading="lazy"
+            />
+          </a>
+          <div class="project-caption project-caption--cyan">
+            <p>Producer + artist · Three-week project</p>
+            <h3><a href="/work/gallery-of-spirits/">Gallery of Spirits</a></h3>
+            <p>A two-person local network game where a benevolent spirit guides a night guard out of a museum.</p>
+          </div>
+        </article>
+
+        <article class="project-entry project-entry--beexon">
+          <a class="project-media project-media--lime" href="/work/beexon/" aria-label="Open Beexon">
+            <img
+              src={beexonCard.src}
+              width={beexonCard.width}
+              height={beexonCard.height}
+              alt="Beexon bee flying through a colorful flower field"
+              loading="lazy"
+            />
+          </a>
+          <div class="project-caption project-caption--lime">
+            <p>Artist + producer · One-week project</p>
+            <h3><a href="/work/beexon/">Beexon</a></h3>
+            <p>A bee-themed remake of the classic arcade game Zaxxon.</p>
+          </div>
+        </article>
+
+        <article class="project-entry project-entry--concept">
+          <a class="project-media project-media--powder" href="/work/concept-art/" aria-label="Open Concept Art">
+            <img
+              src={conceptCard.src}
+              width={conceptCard.width}
+              height={conceptCard.height}
+              alt="Seagull character concept with expressive poses and costume studies"
+              loading="lazy"
+            />
+          </a>
+          <div class="project-caption project-caption--paper">
+            <p>Character studies</p>
+            <h3><a href="/work/concept-art/">Concept Art</a></h3>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="visual-work" class="work-category work-category--visual" aria-labelledby="visual-title">
+      <header class="category-heading category-heading--powder">
+        <p>Broader practice</p>
+        <h2 id="visual-title">Graphics + Art</h2>
+        <p>Printed worlds, physical installations, painting, and collage.</p>
+      </header>
+
+      <pre class="category-fish category-fish--cyan" aria-hidden="true">  ,,&#10; (')&lt;&#10;  ``</pre>
+
+      <div class="project-ledger project-ledger--visual">
+        <article class="project-entry project-entry--graphics">
+          <a class="project-media project-media--cyan" href="/graphics/" aria-label="Open Graphic Design">
+            <img
+              src={limelightPoster.src}
+              width={limelightPoster.width}
+              height={limelightPoster.height}
+              alt="Limelight show poster with hot-pink lettering over a dark character illustration"
+              loading="lazy"
+            />
+          </a>
+          <div class="project-caption project-caption--pink">
+            <p>Graphic design</p>
+            <h3><a href="/graphics/">Show</a></h3>
+            <p>Show posters for a character’s world, inspired by rave flyers and built with tactile textures.</p>
+          </div>
+        </article>
+
+        <article class="project-entry project-entry--sculpture">
+          <a class="project-media project-media--lime" href="/sculpture/" aria-label="Open Sculpture and Installation">
+            <img
+              src={foundation.src}
+              width={foundation.width}
+              height={foundation.height}
+              alt="Foundation chalk work drawn across a parking lot"
+              loading="lazy"
+            />
+          </a>
+          <div class="project-caption project-caption--lime">
+            <p>Physical work</p>
+            <h3><a href="/sculpture/">Sculpture + Installation</a></h3>
+            <p>1984, Foundation, and Countdown.</p>
+          </div>
+        </article>
+
+        <article class="project-entry project-entry--traditional">
+          <a class="project-media project-media--powder" href="/traditional/" aria-label="Open Traditional Art">
+            <img
+              src={ladyWithFabric.src}
+              width={ladyWithFabric.width}
+              height={ladyWithFabric.height}
+              alt="Oil painting of a seated figure surrounded by patterned fabric"
+              loading="lazy"
+            />
+          </a>
+          <div class="project-caption project-caption--paper">
+            <p>Traditional art</p>
+            <h3><a href="/traditional/">Paintings + Collage</a></h3>
+            <p>Oil, gouache, acrylic, ink, fabric, and magazine collage.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <nav class="directory-close" aria-label="Work page next steps">
+      <p>Start with the featured case study, or return to the top of the index.</p>
+      <div>
+        <a href="/work/poyjector/">Read POYjector →</a>
+        <a href="#main">Back to top ↑</a>
+      </div>
+    </nav>
+  </article>
 </Base>
 
 <style>
-  h1 { font-size: var(--text-2xl); margin: 0 0 var(--space-sm); }
-  .intro { color: var(--color-text-secondary); margin: 0 0 var(--space-xl); }
-  .work-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-lg); }
-  .work-list a { font-size: var(--text-lg); }
-  .work-list p { margin: var(--space-2xs) 0 0; color: var(--color-text-secondary); }
+  .work-directory { width: min(100%, var(--max-width-hero)); margin: 0 auto; }
+  .directory-header { display: grid; gap: var(--space-xl); padding-top: var(--space-xl); }
+  .directory-title > p:first-child { margin: 0 0 var(--space-sm); text-transform: uppercase; }
+  .directory-title h1 { margin: 0; font-size: var(--text-hero); font-weight: 850; line-height: var(--leading-flat); text-transform: uppercase; }
+  .directory-intro { max-width: var(--max-width-reading); margin: var(--space-lg) 0 0; font-size: var(--text-lg); line-height: var(--leading-normal); }
+  .category-index { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-xs); align-content: end; }
+  .category-tab { display: flex; align-items: center; justify-content: center; gap: var(--space-md); min-height: var(--space-2xl); padding: var(--space-sm); color: var(--color-ink); text-align: center; text-decoration: none; box-shadow: var(--shadow-paper); }
+  .category-tab span { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 750; line-height: var(--leading-tight); text-transform: uppercase; }
+  .category-tab small { display: none; font-size: var(--text-sm); text-transform: uppercase; }
+  .category-tab--product { background: var(--color-lime); transform: rotate(1deg); }
+  .category-tab--games { background: var(--color-cyan); transform: rotate(-1deg); }
+  .category-tab--visual { background: var(--color-powder); transform: rotate(1deg); }
+  .category-tab:focus-visible { outline-color: var(--color-ink); }
+  .work-category { display: grid; gap: var(--space-lg); padding-top: var(--space-lg); }
+  .category-heading { position: relative; z-index: 3; min-width: 0; align-self: start; padding: var(--space-lg); color: var(--color-ink); box-shadow: var(--shadow-paper); }
+  .category-heading--lime { background: var(--color-lime); transform: rotate(-1deg); }
+  .category-heading--cyan { background: var(--color-cyan); transform: rotate(1deg); }
+  .category-heading--powder { background: var(--color-powder); transform: rotate(-1deg); }
+  .category-heading p { margin: 0; line-height: var(--leading-tight); }
+  .category-heading > p:first-child { margin-bottom: var(--space-sm); font-size: var(--text-sm); text-transform: uppercase; }
+  .category-heading h2 { max-width: 100%; margin: 0 0 var(--space-md); overflow-wrap: anywhere; font-size: var(--text-3xl); font-weight: 850; line-height: var(--leading-flat); text-transform: uppercase; }
+  .category-fish { display: none; width: var(--space-2xl); aspect-ratio: 1; margin: 0; color: var(--color-ink); font: inherit; font-size: var(--text-sm); line-height: var(--leading-tight); box-shadow: var(--shadow-paper); }
+  .category-fish--pink { background: var(--color-pink); transform: rotate(2deg); }
+  .category-fish--lime { background: var(--color-lime); transform: rotate(-2deg); }
+  .category-fish--cyan { background: var(--color-cyan); transform: rotate(1deg); }
+  .project-ledger { display: grid; gap: var(--space-xl); min-width: 0; }
+  .project-entry { display: grid; align-items: start; min-width: 0; }
+  .project-media { display: block; padding: var(--space-md); overflow: hidden; box-shadow: var(--shadow-paper); transition: transform var(--motion-duration-image) var(--motion-ease-out); }
+  .project-media--pink { background: var(--color-pink); }
+  .project-media--cyan { background: var(--color-cyan); }
+  .project-media--lime { background: var(--color-lime); }
+  .project-media--powder { background: var(--color-powder); }
+  .project-media:hover, .project-media:focus-visible { transform: scale(var(--motion-scale-image)); }
+  .project-media:focus-visible { outline-color: var(--color-ink); }
+  .project-media img { display: block; width: 100%; height: auto; }
+  .project-caption { position: relative; z-index: 2; width: 92%; margin-top: calc(var(--space-lg) * -1); padding: var(--space-lg); color: var(--color-ink); box-shadow: var(--shadow-paper); }
+  .project-caption--pink { margin-left: auto; background: var(--color-pink); transform: translateX(calc(var(--space-sm) * -1)) rotate(1deg); }
+  .project-caption--cyan { margin-left: auto; background: var(--color-cyan); transform: translateX(calc(var(--space-sm) * -1)) rotate(1deg); }
+  .project-caption--lime { background: var(--color-lime); transform: translateX(var(--space-sm)) rotate(-1deg); }
+  .project-caption--paper { background: var(--color-paper); transform: translateX(var(--space-sm)) rotate(-1deg); }
+  .project-caption p { margin: 0; line-height: var(--leading-tight); }
+  .project-caption > p:first-child { margin-bottom: var(--space-sm); font-size: var(--text-sm); text-transform: uppercase; }
+  .project-caption h3 { margin: 0 0 var(--space-sm); font-size: var(--text-2xl); }
+  .project-caption h3 a { color: var(--color-ink); text-decoration: none; }
+  .project-caption a:focus-visible, .directory-close a:focus-visible { outline-color: var(--color-ink); }
+  .project-open { display: inline-block; margin-top: var(--space-lg); color: var(--color-ink); }
+  .directory-close { display: grid; gap: var(--space-lg); margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-lime); box-shadow: var(--shadow-paper); transform: rotate(-1deg); }
+  .directory-close p { max-width: var(--max-width-reading); margin: 0; font-size: var(--text-lg); }
+  .directory-close div { display: flex; flex-wrap: wrap; gap: var(--space-md) var(--space-xl); }
+  .directory-close a { color: var(--color-ink); font-size: var(--text-lg); }
+
+  @media (min-width: 48rem) {
+    .directory-header { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); align-items: end; min-height: calc(var(--space-3xl) * 2.75); }
+    .category-index { grid-template-columns: 1fr; gap: var(--space-md); }
+    .category-tab { justify-content: space-between; padding: var(--space-lg); text-align: left; }
+    .category-tab span { font-size: var(--text-xl); }
+    .category-tab small { display: block; }
+    .work-category { grid-template-columns: minmax(0, .48fr) minmax(0, 1fr); gap: var(--space-lg); }
+    .category-heading { position: sticky; top: var(--space-lg); grid-column: 1; grid-row: 1; padding: var(--space-xl) var(--space-lg); }
+    .category-fish { display: grid; z-index: 2; grid-column: 1; grid-row: 1; place-items: center; align-self: center; justify-self: center; padding: var(--space-sm); }
+    .category-heading h2 { font-size: var(--text-2xl); }
+    .project-ledger { grid-column: 2; grid-row: 1; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xl) var(--space-md); }
+    .project-entry--poyjector, .project-entry--gallery, .project-entry--traditional { grid-column: 1 / -1; }
+    .project-caption { --caption-shift: var(--space-lg); }
+    .project-entry--poyjector .project-caption,
+    .project-entry--gallery .project-caption { transform: translateX(var(--caption-shift)) rotate(1deg); }
+    .project-entry--concept .project-caption,
+    .project-entry--traditional .project-caption { transform: translateX(calc(var(--caption-shift) * 2)) rotate(-1deg); }
+    .project-entry--sketches .project-caption,
+    .project-entry--beexon .project-caption { transform: translateX(calc(var(--caption-shift) * -1)) rotate(-1deg); }
+    .project-entry--sculpture .project-caption {
+      margin-top: calc((var(--space-2xl) + var(--space-md)) * -1);
+      transform: translateX(var(--caption-shift)) rotate(-1deg);
+    }
+    .project-entry--graphics .project-caption { transform: translateX(calc(var(--caption-shift) * -1)) rotate(1deg); }
+    .directory-close { grid-template-columns: minmax(0, 1fr) auto; align-items: end; padding: var(--space-2xl); }
+  }
+
+  @media (min-width: 72rem) {
+    .directory-header { min-height: calc(var(--space-3xl) * 3); }
+    .category-index { padding-bottom: var(--space-xl); }
+    .work-category { grid-template-columns: minmax(0, .28fr) minmax(0, 1fr); gap: var(--space-2xl); }
+    .category-heading h2 { font-size: var(--text-3xl); }
+    .project-caption { --caption-shift: var(--space-xl); }
+    .project-ledger { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--space-xl); }
+    .project-entry--poyjector { grid-column: 1 / span 9; }
+    .project-entry--sketches { grid-column: 7 / span 6; }
+    .project-entry--gallery { grid-column: 1 / span 8; }
+    .project-entry--beexon { grid-column: 8 / span 5; margin-top: var(--space-xl); }
+    .project-entry--concept { grid-column: 2 / span 5; }
+    .project-entry--graphics { grid-column: 1 / span 5; }
+    .project-entry--sculpture { grid-column: 6 / span 7; margin-top: var(--space-xl); }
+    .project-entry--sculpture .project-caption { margin-top: calc(var(--space-2xl) * -1); }
+    .project-entry--traditional { grid-column: 2 / span 7; }
+  }
 </style>
